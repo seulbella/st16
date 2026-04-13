@@ -1,0 +1,19 @@
+/* 아코디언 제목
+배경 : 회색
+글자 : 진하게, 14px
+*/
+.accordion-header {
+  background-color: #ccc;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 10px;
+  cursor: pointer;
+}
+/* 아코디언 내용
+기본은 표시하지 않음
+*/
+.accordion-content {
+  display: none;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
