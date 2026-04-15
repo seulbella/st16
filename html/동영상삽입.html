@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- video는 인라인태그, 비디오 재생 안됨 -->
+  <video src="image-multimedia/media/halongbay_320.mp4"></video>
+  <!-- 빈태그인 controls 추가 시, 비디오 컨트롤러 생성 -->
+  <video src="image-multimedia/media/halongbay_320.mp4" controls></video>
+  <!-- poster 생성시, 썸네일 추가 -->
+  <video src="image-multimedia/media/halongbay_320.mp4" controls poster="image-multimedia/media/halongbay_320_2_Moment.jpg"></video>
+  <!-- muted 음소거 시키기 -->
+  <video src="image-multimedia/media/halongbay_320.mp4" controls poster="image-multimedia/media/halongbay_320_2_Moment.jpg" muted></video>
+  <!-- loop 무한반복 -->
+  <video src="image-multimedia/media/halongbay_320.mp4" controls poster="image-multimedia/media/halongbay_320_2_Moment.jpg" muted loop></video>
+  <!-- autoplay : 자동재생 (권장x, 크롬은 muted 설정 시 적용됨) -->
+  <!-- playsinline : IOS 환경에서 풀스크린 재생을 막기 위해 설정하는 어튜르뷰트  -->
+  <video src="image-multimedia/media/halongbay_320.mp4" controls poster="image-multimedia/media/halongbay_320_2_Moment.jpg" autoplay muted loop playsinline></video>
+  
+  <hr>
+
+  <!-- 확장자 .asf -->
+  <video autoplay muted loop playsinline>
+    <source src="image-multimedia/media/halongbay_320.asf">
+    <p>지원되지 않는 브라우저입니다.</p>
+  </video>
+
+  <!-- 확장자 .mp4 -->
+  <video autoplay muted loop playsinline>
+    <source src="image-multimedia/media/halongbay_320.mp4">
+    <p>지원되지 않는 브라우저입니다.</p>
+  </video>
+
+
+
+</body>
+</html>
