@@ -9,12 +9,35 @@
   .size_img{
     width: 200px;
   }
+
+  .goto{
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+  }
+
+  .goto>a{
+    /* a는 인라인 레벨이기 때문에 블럭레벨로 속성을 바꾼다. */
+    display: block;
+  }
+
 </style>
 <body>
 
   
 
   <h1>하이퍼링크</h1>
+      <nav>
+      <ul>
+          <!-- li*6>a>{메뉴$} -->
+          <li><a href="#exam1">메뉴1</a></li>
+          <li><a href="#exam2">메뉴2</a></li>
+          <li><a href="#exam3">메뉴3</a></li>
+          <li><a href="#exam4">메뉴4</a></li>
+          <li><a href="#exam5">메뉴5</a></li>
+          <li><a href="#exam6">메뉴6</a></li>
+      </ul>
+    </nav>
   <hr>
   <h2>블록레벨과 인라인레벨</h2>
   <p>네이버</p>
@@ -33,7 +56,7 @@
       <pre>href = "url"</pre>
     </li>
   </ul>
-  <h3>하이퍼링크 연습</h3>
+  <h3 id="exam1">하이퍼링크 연습</h3>
   <!-- 
   url 형식
   프로토콜://도메인/경로/파일명.확장자
@@ -55,19 +78,63 @@
   <img class="size_img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Naver_Logotype.svg/960px-Naver_Logotype.svg.png" alt="Naver image"></a>
   </a>
 
-  <h3>이미지에 하이퍼링크</h3>
+  <h3 id="exam2">이미지에 하이퍼링크</h3>
   <a href="http://www.google.co.kr" title="구글 바로가기" target="_blank"><img class="size_img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/500px-Google_2015_logo.svg.png" alt="Google image"></a>
 
-  <h3>전화번호에 연결</h3>
+  <h3 id="exam3">전화번호에 연결</h3>
   <p>tel : 프로토콜은 모바일에서만 사용가능</p>
   <a href="tel:010-1234-5678">010-5621-8955</a>
 
-  <h3>인터넷상의 파일이 아닌 동일 컴(서버)의 파일 연결</h3>
+  <h3 id="exam4">인터넷상의 파일이 아닌 동일 컴(서버)의 파일 연결</h3>
   <a href="상대경로연습.html" title="상대경로연습 바로가기" target="_blank">상대경로연습</a>
   <br><br>
   <a href="../url연습/상대경로연습2.html" title="상대경로연습2 바로가기" target="_blank">상대경로연습2</a>
 
+  <h3 id="exam5">비 html파일 링크 걸기</h3>
+  <a href="asset/logo.png">로고 보기</a>
+  <br><br>
+  <a href="../html/image-multimedia.zip">자료 다운로드</a>
 
+  <h3 id="exam6">문서 내 이동</h3>
+  <ol>
+    <li>문서 내 이동을 원하는 곳에 북마크를 만듭니다.
+      <ol>
+        <li>북마크가 될 태그에 아이디를 지정</li>
+        <li>html에서 id를 선언할 때 : id="아이디명"
 
+        <p>html, css 에서 id를 호출할 때 : #아이디명</p>
+      
+        </li>
+      </ol> <!--//북마크 지정-->
+    </li>
+    <li>문서 내에 북마크로 이동할 수 있는 메뉴링크
+        <ul>
+          <li>a 태그의 href="url"</li>
+          <li>a 태그의 href="#아이디명"</li>
+        </ul>
+    </li>
+  </ol> <!--//북마크 설명-->
+
+  <h3>하단메뉴</h3>
+    <nav>
+      <ul>
+          <!-- li*6>a>{메뉴$} -->
+          <li><a href="#exam1">메뉴1</a></li>
+          <li><a href="#exam2">메뉴2</a></li>
+          <li><a href="#exam3">메뉴3</a></li>
+          <li><a href="#exam4">메뉴4</a></li>
+          <li><a href="#exam5">메뉴5</a></li>
+          <li><a href="#exam6">메뉴6</a></li>
+      </ul>
+    </nav>
+
+  <div class="goto">
+    <!-- 
+    북마크하는 태그 id="아이디"
+    호출 <a href="#아이디">내용</a> 
+    -->
+    <a href="#">TOP</a>
+    <a href="#exam6">Bottom</a>
+  </div>
 </body>
 </html>
