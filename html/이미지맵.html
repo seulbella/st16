@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이미지맵</title>
+</head>
+<body>
+  <h1>이미지에 링크하기</h1>
+  <hr>
+
+  <h2>1. 예시 링크하기</h2>
+  <!-- 태그를 감싸서 태그를 만드는 emmet -->
+  <div class="exam">
+    <a href="https://github.com/" class="sample">
+      <img src="asset/logo.png" alt="">
+    </a>
+  </div>
+
+  <br><br>
+  <h2>2. 하나의 이미지에 여러개 링크 이미지맵</h2>
+  <div class="exam">
+    <!-- 하나의 이미지에 여러개의 링크를 걸때 -->
+    <img src="image-multimedia/image/imagemap-sample.jpg" alt="이미지맵연습">
+
+    <!-- 기존에 생성된 이미지는 안좋을 수도 있어서 내가 갖고 있는 이미지로 생성 -->
+    <!-- <img src="imagemap-sample.jpg" usemap="#image-map"> -->
+    <img src="image-multimedia/image/imagemap-sample.jpg"  usemap="#image-map">
+
+    <!-- name 속성의 이름은 문서 내에 유일해야 합니다. -->
+    <map name="image-map">
+      <area target="_blank" alt="Naver로 이동" title="Naver로 이동" href="https://www.naver.com" coords="69,353,271,503" shape="rect">
+      <area target="_blank" alt="Github로 이동" title="Github로 이동" href="https://github.com" coords="612,417,101" shape="circle">
+      <area target="_blank" alt="Google로 이동" title="Google로 이동" href="https://google.com" coords="227,267,400,367,396,275,279,205" shape="poly">
+    </map>
+  </div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 3줄(row) 4칸(column) -->
+
+  <!-- 
+  row 행
+  cell 데이터 들어가는 영역
+  -->
+
+  <!-- table>tr*3>td*4>{내용} -->
+  <table border="1">
+    <tr>
+      <td>내용</td>
+      <td>내용</td>
+      <td>내용</td>
+      <td>내용</td>
+    </tr>
+    <tr>
+      <td>내용</td>
+      <td>내용</td>
+      <td>내용</td>
+      <td>내용</td>
+    </tr>
+    <tr>
+      <td>내용</td>
+      <td>내용</td>
+      <td>내용</td>
+      <td>내용</td>
+    </tr>
+  </table>
+
+  <br><br>
+  <!-- 2행 3열 테이블 -->
+  <!-- table>tr*2>td*3>{내용} -->
+  <table border="1" width="500px">
+    <tr>
+      <td>내용</td>
+      <td>내용</td>
+      <td>내용</td>
+    </tr>
+    <tr>
+      <td>가나다 라마바</td>
+      <td>내용</td>
+      <td>내용</td>
+    </tr>
+  </table>
+
+  <hr>
+  <p>블록레벨</p>
+  <span>가나다</span>
+
+  <hr>
+  <h2> 4줄 5칸 표 만들기 실습</h2>
+  
+  <table border="1" width="700px">
+    <tr>
+      <td>ㅤ</td>
+      <td>제목</td>
+      <td>제목</td>
+      <td>제목</td>
+      <td>제목</td>
+    </tr>
+    <tr>
+      <td>분류1</td>
+      <td>내용</td>
+      <td>내용</td>
+      <td>내용</td>
+      <td>내용</td>
+    </tr>
+    <tr>
+      <td>분류2</td>
+      <td>내용</td>
+      <td>내용</td>
+      <td>내용</td>
+      <td>내용</td>
+    </tr>
+    <tr>
+      <td>분류3</td>
+      <td>내용</td>
+      <td>내용</td>
+      <td>내용</td>
+      <td>내용</td>
+    </tr>
+  </table>
+
+  <hr>
+
+  <!--
+  첫번째 row 표머리말
+  2,3 표 본문
+  마지막 row 표의 바닥글 
+  
+  머리글 -> 제목 데이터
+  2, 3, 4 -> 1칸 제목 2,3,4,5칸 데이터
+  -->
+  <table border="1">
+    <thead>
+      <tr>
+        <th>ㅤ</th>
+        <th>제목2</th>
+        <th>제목3</th>
+        <th>제목4</th>
+        <th>제목5</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- tr*2>th+td*4>{내용$@2} -->
+      <tr>
+        <th>제목</th>
+        <td>내용2</td>
+        <td>내용3</td>
+        <td>내용4</td>
+        <td>내용5</td>
+      </tr>
+      <tr>
+        <th>제목</th>
+        <td>내용2</td>
+        <td>내용3</td>
+        <td>내용4</td>
+        <td>내용5</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <!-- tr>th+td*4{내용$@2} -->
+      <tr>
+        <th>제목</th>
+        <td>내용2</td>
+        <td>내용3</td>
+        <td>내용4</td>
+        <td>내용5</td>
+      </tr>
+    </tfoot>
+  </table>
+
+</body>
+</html>
