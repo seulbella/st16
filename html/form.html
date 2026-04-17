@@ -7,36 +7,152 @@
 </head>
 <body>
   <h1>폼태그</h1>
+
+  <h2> 회원가입 양식 맛보기 </h2>
+
   <form action="">
-    <!-- fieldset, legend 많이 생략하는 태그, form 내 이름표 태그 -->
     <fieldset>
       <legend>폼의 이름표</legend>
-    </fieldset>
-  </form>
-
-  <hr>
-
-  <!-- input 내 type 익히기 -->
-  <form action="">
-    <fieldset>
-        <!-- type = "text" -->
-        <label > 아이디 <input type="text"></label>
+      <p>
+        <label >아이디 <input type="text"></label>
         <input type="text" placeholder="이름" id="name">
-        <label for="pwd"> 비밀번호 </label>
-          <input type="password" name="" id="pwd">
+        <label for="pwd">비밀번호</label>
+        <input type="password" name="" id="pwd">
       </p>
       <p>
-          <input type="number"> <br>
-          <input type="email" name="" id="">
+        <input type="number"> 
+        <input type="email" name="" id="">
       </p>
       <p>
-        <input type="date">
-        <input type="month">
+        <input type="date" name="" id="">
+        <input type="week">
       </p>
       <p>
         <input type="color">
       </p>
     </fieldset>
+
+    
+    
+      <h2> 연습용 표테이블 & 폼태그 </h2>
+    <!-- 표테이블로 만들어봄 -->
+    <fieldset>
+      <legend>선택상자(표테이블)</legend>
+      <div>
+        <table>
+          <tr>
+            <th>항목선택</th>
+            <td><input type="checkbox" name="" id="color1">빨강</td>
+            <td><input type="checkbox" name="" id="color2">파랑</td>
+            <td><input type="checkbox" name="" id="color3">노랑</td>
+            <td><input type="checkbox" name="" id="color4">주황</td>
+          </tr>
+        </table>
+      </div>
+    </fieldset>
+
+    
+    
+    <h2> 체크박스와 라디오 버튼 </h2>
+    <!-- 라벨 및 폼태그 선택상자 -->
+    <!-- 체크박스나 라디오버튼의 value 값은 데이터베이스로 넘어감 -->
+    <fieldset>
+      <legend>선택상자(라벨 및 폼태그)</legend>
+      <div>
+       <label for="color1">빨강</label>
+       <input type="checkbox" name="color" id="color1" value="">
+       <label for="color2">파랑</label>
+       <input type="checkbox" name="color" id="color2" value="">
+       <label for="color3">노랑</label>
+       <input type="checkbox" name="color" id="color3" value="">
+       <label for="color4">초록</label>
+       <input type="checkbox" name="color" id="color4" value="">
+      </div>
+    </fieldset>
+
+    
+
+    <!-- 라디오 버튼은 'name'의 값을 지정해줘야, 재기능을 유지한다. -->
+    <fieldset>
+      <legend>라디오버튼</legend>
+      <label for="test1">빨강</label>
+      <input type="radio" name="test" id="test1">
+      <label for="test2">파랑</label>
+      <input type="radio" name="test" id="test2">
+      <label for="test3">노랑</label>
+      <input type="radio" name="test" id="test3">
+    </fieldset>
+
+    
+
+    <h2> reset과 submit </h2>
+    <!-- submit 버튼을 누르면 form 태그의 action 값 내 파일이 작동됨 -->
+    <!-- 아래 태그들의 value 값 (취소,확인,주소찾기)들은 네이밍할 때 쓰임 -->
+    <div>
+      <input type="reset" name="" id="">
+      <input type="submit" name="" id="">
+      <input type="reset" value="취소" name="" id="">
+      <input type="submit" value="확인" name="" id="">
+      <input type="button" value="주소찾기">
+      <!-- type이 file이면, value 값을 수정해도, '파일선택' 고대로 노출됨-->
+      <input type="file" value="찾아보기">
+    </div>
+
+    
+
+    <div>
+      <button>제목</button>
+      <button type="submit">확인</button>
+      <button type="reset">취소</button>
+      <button type="button">제목</button>
+      <button type="button">
+        <img src="asset/logo.png" alt="" width="50">
+      </button>
+    </div>
+
+    
+
+    <h2> select와 option </h2>
+    <div>
+      <select name="" id="">
+        <option value="">패밀리사이트</option>
+        <option value="https://www.naver.com">네이버</option>
+        <option value="">구글</option>
+        <option value="">다음</option>
+      </select>
+
+      <!-- multiple : 다중으로 클릭할 수 있게 해주는 속성 -->
+      <select name="" id="" multiple>
+        <option value="">패밀리사이트</option>
+        <option value="https://www.naver.com">네이버</option>
+        <option value="">구글</option>
+        <option value="">다음</option>
+      </select>
+    </div>
+
+    
+
+    <h2>textarea : 텍스트 입력 인폼창 </h2>
+    <div>
+      <textarea cols="30" rows="10" name="" id="">일반 textarea 기능입니다.</textarea>
+      <!-- disabled 비활성화 -->
+      <textarea cols="30" rows="10" name="" id="" disabled>비활성화된 기능의 textarea</textarea>
+      <!-- readonly : 사용자 친화적인 기능은 아님 -->
+      <textarea cols="30" rows="10" name="" id="" readonly>읽기만 할 수 있습니다.</textarea>
+    </div>
+
   </form>
+
+  <style>
+    /* 선택자 태그 */
+    button, [type="submit"]{
+      background-color: #f00;
+    }
+
+    div{
+      margin-bottom: 50px;
+    }
+  </style>
+
 </body>
 </html>
