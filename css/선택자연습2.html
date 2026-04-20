@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>선택자 연습2</title>
+  <style>
+
+    /* 서체 지정
+    font-family: 글꼴이름1, 글꼴이름2,..., 브라우저 사용 서체
+    font-family: 영어서체, 한글서체,..., 브라우저 사용 서체
+    font-family: 영어서체, 한글서체,..., sans-serif;
+    font-family: 영어서체, 한글서체,..., serif;
+    
+    
+    
+    */
+
+    body{
+      font-family: "suit", serif;
+      /* 브라우저 설정 기본크기 font-size: 1em; */
+      /* 브라우저 설정 기본크기 font-size: 16px; */
+      /* font-size: 14px; */
+      /* em은 부모의 크기에 비례하여 설정되는 크기 (상대수치, 반응형) */
+
+      font-size: 0.875em; /* 14px */
+      /* font-size: 87.5%; */
+      
+    }
+
+    .box p{
+      /* font-size: 0.875em; 부모의 글자크기 14px의 0.875 */
+      /* font-size: 14px; 부모의 크기와 상관 없이 무조건 14px */
+      font-size: 0.875rem;
+    }
+
+    /* reset */
+    h1, h2, h3, h4, h5, h6{
+      /* rem은 루트를 기준으로 한 상대적인 크기를 의미 */
+      font-size: 1rem; /* root(html문서) 의 글자크기 (16px)을 기준*/
+      font-weight: normal;
+    }
+
+    /* 
+    p{}
+    .title{}
+    section .title {} 후손 .title
+    section > .title {} 직계자식 .title
+    */
+
+    /* 직계자식만 */
+    section > .title {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: #8866ff;
+      font-family: Impact, "pretandard", sans-serif;
+    }
+
+    /* 후손까지 */
+    /* section .title {
+      font-weight: 100;
+      font-size: 1rem;
+    } */
+
+    /* font-style */
+    .italic{
+      font-style: italic;
+      color: royalblue;
+      font-weight: bold;
+    }
+
+    /* 소문자 크기의 대문자 표기 small-caps */
+    section > .title{
+      font-variant: small-caps;
+    }
+
+    /* 
+    블록레벨의 요소 내의 문단의 줄간격
+    요소와 요소 사이의 간격은 여백으로 처리
+    */
+
+    #section2{
+      line-height: 1.5;
+    }
+
+    body{
+      /* font-size: 0.875em;  */
+      /* font-style: normal;
+      font-weight: normal;
+      font-family: "궁서체",serif;
+      line-height: 1.5; */
+      
+      
+      /* font : font-style font-variant font-weight font-size/line-height font-family; */
+      /* font: normal normal 0.875em/1.5 "궁서체", serif; */
+      
+      /* line-height는 생략 시 font-size 뒤에 / 생략 */
+      font: 0.875em "궁서체", serif;
+
+    }
+
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <header></header>
+
+    <div class="container">
+      <!-- section#section$*3>p.title+div.box>h2+p*2lorem10 -->
+       <section id="section1">
+        <div class="title">section1</div>
+        <div class="box">
+          <h2 class="title">신상품</h2>
+          <p>Lorem <span class="italic">ipsum</span> dolor sit amet consectetur adipisicing elit. Odit, nesciunt?</p>
+          <p>Delectus sint, quae eligendi rem omnis quidem nostrum necessitatibus autem.</p>
+        </div>
+       </section> 
+
+
+       <section id="section2">
+        <p class="title">section2</p>
+        <div class="box">
+          <h2 class="title">MD 추천</h2>
+          <p>Lorem ipsum dolor sit amet <span class="italic">consectetur</span> adipisicing elit. Odit, nesciunt?</p>
+          <p>Delectus sint, quae eligendi rem omnis quidem nostrum necessitatibus autem.</p>
+        </div>
+        <p> section2 마지막 자식 </p>
+       </section>
+
+
+       <section id="section3">
+        <p class="title">section3</p>
+        <div class="box">
+          <h2 class="title">베스트 상품</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, <span class="italic">nesciunt?</span></p>
+          <p>Delectus sint, quae eligendi rem omnis quidem nostrum necessitatibus autem.</p>
+        </div>
+       </section>
+    </div>
+    <!-- //.container -->
+    
+    <footer></footer>
+  </div>
+  <!-- //#wrap -->
+</body>
+</html>

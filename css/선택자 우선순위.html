@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>선택자 우선순위</title>
+  <style>
+
+
+    /*  */
+    /* 
+    1. 기본적으로 css는 스크립트 방식임
+    - 스크립트 방식 : 위에서 아래로 우선 순위 적용 (아래가 최신)
+    2. 우선순위값이 높은 선택자가 우선
+    태그1, 클래스10, 아이디 100, 인라인 1000
+    3. 최종 환산 점수로 적용 되며, 아래 .box p가 .title보다 위에 있으나, 우선 적용된 이유는 환산 점수가 1점이 더 높기 때문. 
+    */
+
+    /* 선택자 내 '!important' 삽입하면 우선순위 모두 무시하고 해당 선택자 우선 적용
+    웬만하면 사용 x */
+
+    /*  */
+    /* .box p{color:dodgerblue !important} */
+    .box p{color:dodgerblue} /* 10+1 */
+    .title{color: #0f0;} /* 10 */
+    p{color:#0ff} /* 1 */
+    div{color: #f00;} /* 1 */
+    div{color: #00f;} /* 1 */
+    p{color: #000;} /* 1 */
+
+  </style>
+</head>
+<body>
+
+  <!-- p>lorem -->
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed nobis voluptatem molestias praesentium impedit accusantium tenetur laborum, aspernatur illum neque eius temporibus deserunt, maxime libero possimus iste officia perspiciatis reprehenderit?</p>
+
+  <!-- div.box>p+p.title -->
+  <div class="box">
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, ipsam.</p>
+    <p class="title" style="color:#86f">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis magnam architecto reprehenderit numquam maxime quis nesciunt deleniti deserunt, est, corrupti nihil ipsum in perferendis mollitia totam dignissimos, similique quod incidunt.</p>
+  </div>
+</body>
+</html>
