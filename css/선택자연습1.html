@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>선택자 연습</title>
+  <style>
+    h2{
+      color:#86f
+    }
+
+    .title{
+      color: #f68;
+    }
+
+    div.title{
+      color: #8f6;
+    }
+
+    #section1{
+      border: 1px solid #000;
+    }
+
+    .box p{
+      color:red;
+    }
+    
+    /* section > p{ */
+    section > .title{
+      color: #ff0;
+    }
+    section > .title{
+      color: #cc9;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <header></header>
+
+    <div class="container">
+      <!-- section#section$*3>p.title+div.box>h2+p*2lorem10 -->
+       <section id="section1">
+        <div class="title">section1</div>
+        <div class="box">
+          <h2>신상품</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, nesciunt?</p>
+          <p>Delectus sint, quae eligendi rem omnis quidem nostrum necessitatibus autem.</p>
+        </div>
+       </section>
+       <section id="section2">
+        <p class="title">section2</p>
+        <div class="box">
+          <h2>신상품</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, nesciunt?</p>
+          <p>Delectus sint, quae eligendi rem omnis quidem nostrum necessitatibus autem.</p>
+        </div>
+        <p> section2 마지막 자식 </p>
+       </section>
+       <section id="section3">
+        <p class="title">section3</p>
+        <div class="box">
+          <h2>신상품</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, nesciunt?</p>
+          <p>Delectus sint, quae eligendi rem omnis quidem nostrum necessitatibus autem.</p>
+        </div>
+       </section>
+    </div>
+    <!-- //.container -->
+    
+    <footer></footer>
+  </div>
+  <!-- //#wrap -->
+</body>
+</html>
