@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    *{margin: 0; padding: 0;}
+    
+    .box{
+      /* 
+      margin : 값1;
+      margin : 상우하좌;
+      margin : 값1 값2;
+      margin : 상하 좌우;
+      margin : 값1 값2 값3;
+      margin : 상 좌우 하;
+      margin : 값1 값2 값3 값4; 
+      margin : 상 우 하 좌;
+      */
+
+      /* margin collapsing(상쇄) : 인접형제 마진 상하 겹침현상
+      - 각 인접 박스가 서로 마진이 겹칠 때, 1개의 마진 사이즈 값만 사이에 적용이 되며,
+      각각 마진 값이 다른데 겹치는 경우에는 제일 높은 마진 값을 우선 적용한다.
+      */
+      margin: 50px;
+      width: 200px;
+      height: 150px;
+      background-color: #ccc;
+      border: 1px solid #000;
+      /* display: inline-block; */
+    }
+
+    .box1{
+      margin-bottom: 80px;
+    }
+  </style>
+
+</head>
+<body>
+  <!-- .box.box$*4>lorem15 -->
+  <div class="box box1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi impedit itaque quibusdam dolore incidunt in?</div>
+  <div class="box box2">Vero voluptatibus est dignissimos molestiae tenetur animi dolores, quidem voluptas soluta commodi ducimus eligendi quos.</div>
+  <div class="box box3">Porro earum esse perferendis blanditiis. Voluptates eius accusamus accusantium quidem facilis quos a illum debitis.</div>
+  <div class="box box4">Dolor harum ab quos! Alias cumque quo autem error dolor, rerum temporibus repellendus atque nobis?</div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    *{margin: 0; padding: 0;}
+    
+    .box{
+      margin: 30px;
+      width: 200px;
+      height: 200px;
+      background-color: #ccc;
+      /* display: inline-block; */
+    }
+
+    .box1{
+      /* 안쪽여백 : 상하 좌우 */
+      /* 수평 크기
+      margin-left,right 각 30px = 60px, border-left,right 각 0px = 0px,
+      padding-left,right 각 20px = 40px
+      width 200px
+      총 300px
+      
+      개발자도구에서는 margin 제거된 크기로 나옴
+      margin-left,right 각 30px = 60px
+      300px - 60px = 240px
+      */
+
+      /* 수직크기
+      margin-top,bottom : 각 30px
+      border-top,bottom : 각 0px
+      padding-top,bottom : 각 10px
+      height : 200px
+      총 280px
+
+      개발자도구 (margin 제거)
+      280 - 60 = 220px
+       */
+      padding: 10px 20px;
+    }
+
+    .box2{
+      padding: 10px 20px;
+      box-sizing: content-box;
+    }
+
+    /* 
+    box-sizing:content-box
+    박스모델의 계산법 정의
+      content-box값 :
+      width / height -> 요소의 내용 크기
+      border-box값 :
+      width / height -> border+padding+content 영역
+    */
+
+    .box3{
+      box-sizing: border-box;
+      padding: 10px 20px;
+    }
+
+    .box4{
+      box-sizing: border-box;
+      /* 
+      width & height
+      => border + padding + content 영역 */
+      width: 300px;
+      border: 10px dashed #000;
+      /* em
+      font-size : 부모 기준
+      box-model : 자신 글자크기 기준
+      */
+      padding: 2em 1em;
+    }
+
+  </style>
+
+</head>
+<body>
+  <!-- .box.box$*4>lorem15 -->
+  <div class="box box1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi impedit itaque quibusdam dolore incidunt in?</div>
+  <div class="box box2">Vero voluptatibus est dignissimos molestiae tenetur animi dolores, quidem voluptas soluta commodi ducimus eligendi quos.</div>
+  <div class="box box3">Porro earum esse perferendis blanditiis. Voluptates eius accusamus accusantium quidem facilis quos a illum debitis.</div>
+  <div class="box box4">Dolor harum ab quos! Alias cumque quo autem error dolor, rerum temporibus repellendus atque nobis?</div>
+</body>
+</html>
