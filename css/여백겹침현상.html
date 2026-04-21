@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>여백겹침현상</title>
+  <style>
+    
+    /* reset */
+    /* 모든 컨텐츠의 기본 정렬은 왼쪽부터 */
+    *{
+      margin: 0px;
+      padding: 0px;
+    }
+
+    body{
+      background-color: #ccc;
+    }
+
+    /* 
+    헤더 스타일 조건
+    1. 헤더 내용과 요소 사이의 여백
+    2. 헤더 아래 테두리가 나오게
+    3. 내용이 부모의 가운데에 정렬
+    */
+
+    header{
+      background-color: #fff;
+      /* 헤더 내용과 요소 사이 안 여백(패딩) */
+      padding: 1rem 0; /* html의 기본 글자 크기 16px */
+      border-bottom: 1px solid #000;
+      /* 최소 높이 확보 */
+      min-height: 100px;
+    }
+
+    /* 
+    정렬은 부모에게 줘라.
+    */
+
+    header .inner{
+      background-color: #ccc;
+      min-width: 600px;
+      max-width: 1199px; /* 내 맥북 최대 크기 */
+      /* 
+      박스모델의 블록레벨의 정렬은 margin:0 auto; 이용해 정렬
+      margin 바깥 여백을 반으로 나눠서 왼쪽 오른쪽 적용
+      */
+      /* width: auto; */
+      width: 90%;
+      margin: 0 auto;
+      padding: 50px 0px;
+    }
+
+    header .inner .child{
+      padding: 1rem;
+      /* 너비에 해당되는 영역은 부모에게 padding을 줘서 겹침현상을 해결한다. */
+      /* margin: 50px; */ 
+    }
+
+    header .inner .child1{
+      background-color: #86f;
+    }
+
+    header .inner .child2{
+      background-color: #f68;
+    }
+  </style>
+</head>
+<body>
+  <!-- header : 최상위 컨테이너 -->
+  <header>
+    <!-- 여백, 테두리 -->
+    <div class="inner">
+      <!-- 정렬기준 -->
+      <div class="child child1">내용</div>
+      <div class="child child2">내용</div>
+    </div>
+  </header>
+</body>
+</html>
