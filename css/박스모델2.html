@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>box model</title>
+  <style>
+    
+    /* reset */
+    *{
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .box{
+      background-color: #ccc;
+      margin: 50px;
+      width: 200px;
+      /* height: 150px; */
+      min-height: 150px;
+    }
+
+    /* 
+    박스모델
+    속성 : 값1 값2 값3 값4;
+    속성 : 상 우 하 좌;
+    속성 : 값1 값2 값3;
+    속성 : 상 우하 좌;
+    속성 : 값1 값2;
+    속성 : 상하 우좌;
+    속성 : 값1
+    속성 : 상하우좌;
+    */
+
+    .box2{
+      border-top: 10px solid #f00;
+      border-right: 10px dotted dodgerblue;
+      border-bottom: 4px dashed green;
+      border-left: 10px double;
+      padding: 10px 20px 30px 40px;
+    }
+
+    .box3{
+      border: 10px dashed blue;
+      /* padding : 상 우하 좌 */
+      padding: 10px 50px 30px;
+    }
+
+    .box4{
+      border: 10px dashed blue;
+      border-left: none;
+      border-right: none;
+      /* padding : 상하 우좌 */
+      padding: 10px 50px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="box box1">박스1</div>
+  <div class="box box2">박스2</div>
+  <div class="box box3">박스3</div>
+  <div class="box box4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam exercitationem sint quibusdam, consequuntur reiciendis eaque autem accusantium dolorem quis, aliquam itaque veritatis quam laborum, labore a molestias corrupti nisi vitae.</div>
+</body>
+</html>
