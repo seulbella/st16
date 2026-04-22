@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>border-radius</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 50px;
+    }
+
+    .box{
+      width: 80px;
+      height: 80px;
+      background-color: #ccc;
+      margin-bottom: 30px;
+    }
+
+    .box1{
+      border-radius: 10px 20px 30px 40px;
+      /* border-radius : 좌상 우상 우하 좌하 */
+    }
+
+    .box2{
+      /* 원래 크기의 절반만 radius를 주겠다. => 50% */
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+    }
+
+    .box3{
+      border-radius: 40px 40px 40px 0;
+
+    }
+
+    .box4{
+      border-radius: 0px 40px 40px 40px;
+    }
+
+    .box5{
+      border-radius: 40px 40px 0 0;
+    }
+
+    .box6{
+      border-radius: 0 0 50% 0;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>모서리 둥글게</h1>
+  <div class="box box1">box1</div>
+  <div class="box box2">box2</div>
+  <div class="box box3">box3</div>
+  <div class="box box4">box4</div>
+  <div class="box box5">box5</div>
+  <div class="box box6">box6</div>
+</body>
+</html>

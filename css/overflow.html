@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>overflow</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    
+    /* 
+    요소(태그) 크기결정 -> box model
+    box model
+      1. block  : 줄바꿈
+        - 너비와 높이를 지정할 수 있음
+        - 너비는 부모로부터, 높이는 자식으로부터 온다.
+        - 너비는 부모의 콘텐츠 영역만큼 사용한다.
+        - 높이는 본인or자식의 콘텐츠 영역만큼 사용한다.
+      2. inline : 줄바꿈 x
+        - 너비는 내용만큼
+        - 너비와 높이를 지정할 수 없음 x
+      3. inline-block : 줄바꿈 x
+        - 너비와 높이를 지정
+    */
+
+    /* 
+    요소크기 계산법
+    <수평크기>
+    바깥왼쪽여백 + 왼쪽테두리 + 안쪽왼쪽여백 + content + 바깥오른쪽여백 + 오른쪽 테두리 + 안쪽오른쪽여백
+    <수직크기>
+    바깥상단여백 + 상단테두리 + 안쪽상단여백 + content + 바깥하단여백 + 하단 테두리 + 안쪽하단여백
+    */
+
+    .box{
+      background-color: #ccc;
+      width: 300px;
+      height: 150px;
+      /* 안쪽여백 상하좌우 모두 20px */
+      padding: 20px;
+      /* box-sizing : width와 height를 어느 영역까지 포함할건지 결정
+          - content-box : 기본값
+          - border-box : 패딩, 보더 제외 */
+      box-sizing: border-box;
+      margin-bottom: 50px;
+    }
+    /* ------- */
+
+    .overflow-exam .box{
+      width:300px;
+      /* width : 300px; */
+      height : 0px;
+      /* height : auto; */
+      border : 1px solid #000;
+      margin: 50px 0 10px 0px; /* 상 우 하 좌 */
+    }
+
+    .box1{
+      /* overflow: visible; 기본값 */
+      /* auto: 자식요소가 넘치면 자동으로 스크롤바 생성  */
+      overflow: auto;
+    }
+
+    .box2{
+      /* scroll : 무조건 스크롤바 (우측, 하단) 생성 */
+      overflow: scroll;
+    }
+
+    .box3{
+      /* visible : 기본값 */
+      overflow: visible;
+    }
+
+    .box4{
+      /* hidden : 부모 요소보다 넘쳐나는 부분은 보이지 말아라. */
+      /* overflow: hidden; */
+      overflow: hidden;
+    }
+
+    .box5{
+      /* overflow-x : x축에 해당 되는 스크롤은 삭제 */
+      overflow-x: hidden;
+
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="box">연습</div>
+
+  <div class="overflow-exam">
+    <h1>자식의 크기가 부모의 크기보다 클 때</h1>
+    <div class="box box1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, laborum odio. A, aperiam nihil! Molestias!</div>
+    <div class="box box2">Reprehenderit fuga, quos saepe officiis autem quisquam nobis numquam modi sed in officia, minus dolorem?</div>
+    <div class="box box3">Delectus dignissimos illum deserunt, harum vel totam libero animi distinctio eos dolorum unde quam illo.</div>
+    <div class="box box4">Assumenda necessitatibus, expedita cupiditate velit eius modi distinctio aliquid quaerat dolores rem commodi reiciendis repudiandae.</div>
+
+    <div class="box box5">
+      <img src="../html/asset/logo.png" alt="">
+    </div>
+
+  </div>
+</body>
+</html>
