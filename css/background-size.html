@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>background-size</title>
+  <style>
+    *{margin: 0; padding: 0;}
+
+    body{margin: 30px;}
+
+    .box{
+      /* 모든 클래스 box는 크기 계산법을 border부터 포함하게 설정 */
+      box-sizing: border-box;
+      /* 수평크기는 50% 수직 크기는 브라우저의 절반 크기로 설정 */
+      width: 50%;
+      height: 50vh;
+      min-width: 500px;
+      background-color: #ccc;
+      /* 배경색이 포함되지 않는 여백을 20px */
+      margin: 20px;
+      /* bg.jpg를 반복하지 않고 요소의 가운데를 기준으로 배치되게 배경이미지 설정 */
+      background-image: url(../css/images/bg.jpg);
+      /* background-image: url(../css/images/img1.png); */
+      background-repeat: no-repeat;
+      background-position: 50%;
+    }
+
+    .box1{
+      /* background-size: 80% 50%; */
+      /* background-size: 80%; */
+      /* background-size: 300px; */
+      width: auto; height: 100vh;
+      background-position: center;
+      background-size: cover;
+      margin: 0;
+    }
+
+    .box2{
+      /* contain : 배경 이미지가 잘리지 않고 요소에 모두 표시될 수 있도록 이미지를 조절해서 보여줌 */
+      background-size: contain;
+    }
+
+    .box3{
+      /* 배경이미지가 요소를 꽉 채워 커버할 수 있는 수평/수직 크기 중 최적의 크기 */
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+  </div>
+</body>
+</html>

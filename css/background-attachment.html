@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>background-position</title>
+  <style>
+    *{margin:0; padding:0;}
+    
+    .box{
+      /* height: 300px; */
+      box-sizing: border-box;
+      height: 100vh;
+      border: 10px dotted rgba(0,0,0,0.5);
+      background-color: skyblue;
+      font-size: 2em;
+      text-align: center;
+      height: vh;
+      background-image: url(images/frame.png);
+      background-repeat: no-repeat;
+      background-position: right top;
+
+    } 
+
+    /* 배경이미지가 요소에 붙여있는 방법 설정
+    background-attachment : scroll; */
+
+    .box1{
+      width: 500px;
+      background-attachment:scroll;
+    }
+
+    /* background-position은 브라우저가 배경 이미지의 기준된다. */
+    /* 
+    fixed : 배경이 브라우저에 고정되어라.
+    */
+    .box2{
+      width: 80%;
+      background-attachment:fixed;
+      background-position: left top;
+
+    }
+    .box3{
+      width: 10em;
+
+    }
+
+    .box4{
+      width: auto;
+
+    }
+  </style>
+</head>
+<body>
+  <div class="container-wrap">
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+    <div class="box box4">box4</div>
+  </div>
+</body>
+</html>
