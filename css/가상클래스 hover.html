@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가상클래스 hover</title>
+  <style>
+    *{margin: 0; padding: 0;}
+
+    /* 한칸 공백은 후손 / > 직계 자식 */
+    .product, .product>div{
+      box-sizing: border-box;
+    }
+
+    .product{
+      width: 300px;
+      padding: 30px;
+      background-color: #ccc;
+      margin-bottom: 30px;
+    }
+
+    /* 자식의 수평크기는 부모의 콘텐츠 영역의 크기 width : auto; */
+    /* 자식의 수직크기는 자식의 콘텐츠 영역의 크기 height : 자식마다 지정 */
+    .product .thumb{
+      background-color: #f68;
+      min-height: 200px;
+    }
+
+    .product .desc{
+      background-color: coral;
+    }
+
+  </style>
+</head>
+<body>
+  <ul>
+    <li class="product">
+      <div class="thumb">이미지</div>
+      <div class="desc">상품설명</div>
+    </li>
+    <li class="product">
+      <div class="thumb">이미지</div>
+      <div class="desc">상품설명</div>
+    </li>
+  </ul>
+</body>
+</html>
