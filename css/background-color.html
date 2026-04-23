@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배경색 background-color</title>
+  <style>
+    /* reset */
+    *{margin: 0; padding: 0;}
+    body{margin: 50px;}
+
+    .box{
+      margin: 20px;
+      border: 10px dashed #000;
+      background-color: #ccc;
+      /* 내용과 요소의 안쪽여백을 1em */
+      /* em : 부모요소의 font-size 기본 크기가 1em (왜냐하면 현재 따로 부모에 지정해준 font-size가 없기 때문에, html의 기본 사이즈인 16px을 따름)
+      부모의 글자크기 1em
+      부모의 크기 100% */
+      padding: 1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="box box1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero sequi placeat ratione. Magnam recusandae nisi molestias deleniti! Et magni corrupti, expedita eaque eveniet quasi suscipit natus incidunt, vero quos non.</div>
+  <div class="box box2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem consequatur et sunt culpa ea aut blanditiis, ducimus delectus libero magni minus, optio dicta sint numquam? Accusantium pariatur ad aspernatur aut.</div>
+  <div class="box box3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio laboriosam molestiae voluptatibus natus eaque placeat, facere sapiente, molestias ut at voluptates architecto aperiam doloremque mollitia et deserunt ullam, laborum fuga?</div>
+</body>
+</html>
