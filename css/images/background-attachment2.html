@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>background-attachment 2</title>
+  <style>
+    *{margin: 0; padding: 0;}
+
+    .container-wrap{
+      /* margin: 0 50px; */
+      /* margin: 0; */
+      background-color: #ccc;
+    }
+
+    .container-wrap > section{
+      /* 부모요소의 콘텐츠 영역 크기를 모두 받아들이겠다. */
+      box-sizing: border-box;
+        width: 100%;
+        padding: 1em;
+        /* 브라우저의 viewport 높이만큼 다 차지해줘 */
+        height: 100vh;
+        /* margin은 padding과 다르게 -값 지정이 가능하다. */
+      /* margin: 0 -50px; */
+        background-image: url(../images/bg.jpg);
+        background-image: url(../images/sun.png);
+        /* background-image: url(../images/flower.png); */
+        background-repeat: no-repeat;
+        background-color: #b1d192;
+    }
+    
+    /* .container-wrap > section에서 11점, 해당 .section1은 10점으로 적용 안됨 -> 11점 이상이 될 수 있게 작성해줘야 함. */
+
+    /* .section1{ 
+    -> 해당 태그는 없애고 아래처럼 해야 20점 적용 (10점+10점) */
+    .container-wrap > .section1{
+      background-color:
+      rgba(255,136,102,0.2);
+      background-position: 0 0;
+      /* background-image: none; */
+
+    }
+
+    .container-wrap > .section2{
+      background-color: rgba(102,136,255,0.2);
+      /* fixed로 하면 배경이미지의 기준이 요소가 아니라 브라우저가 된다. 
+        center로 하면 브라우저를 기준으로 배경 이미지 가운데로 배치해라라는 뜻*/
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .container-wrap > .section3{
+      background-color: rgba(102,255,136,0.2);
+      background-position: center center;
+      background-position: 100% 0%; /* 오른쪽 위 */
+      /* background-image: none; */
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container-wrap">
+    <section class="section1">
+      <p class="title">
+        section1
+      </p>
+    </section>
+    <section class="section2">
+      <p class="title">
+        section2
+      </p>
+    </section>
+    <section class="section3">
+      <p class="title">
+        section3
+      </p>
+    </section>
+  </div>
+</body>
+</html>

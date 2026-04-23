@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>background-position</title>
+  <style>
+    *{margin:0; padding:0;}
+    
+    .box{
+      height: 300px;
+      border: 10px dotted rgba(0,0,0,0.5);
+      background-color: skyblue;
+      font-size: 2em;
+      text-align: center;
+      background-image: url(images/frame.png);
+      /* 배경 이미지가 요소보다 작을 경우 반복되는 것을 설정 */
+      background-repeat: no-repeat;
+      /* background-repeat: repeat; */
+    } 
+
+    /* 
+    background-postion
+    배경의 기준이 될 위치를 지정
+    */
+
+    .box1{
+      width: 500px;
+      background-position: 0 0;
+      background-position: left top;
+      /* 배경이미지의 기본요소의 왼쪽 위가 기본값 */
+      /* 항상 값은 수평 -> 수직 순으로 쓰기 & 0 0으로도, left top으로도 쓸 수 있음 */
+    }
+    .box2{
+      width: 80%;
+      /* 배경의 이미지를 수평 기준 100% (오른쪽) & 수직 기준 50% (가운데) */
+      background-position: 100% 50%;
+      /* 위와 동일한 세팅 */
+      background-position: right center;
+    }
+    .box3{
+      width: 10em;
+      /* 배경 이미지가 요소의 가운데 기준 */
+      background-position: center center;
+      background-position: center;
+      background-position: 50%;
+    }
+
+    .box4{
+      width: auto;
+      background-color: #fff;
+      background-image: url(images/sun.png);
+      background-position: 90% 10%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-wrap">
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+    <div class="box box4">box4</div>
+  </div>
+</body>
+</html>

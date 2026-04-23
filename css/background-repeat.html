@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>background-repeat</title>
+  <style>
+    *{margin:0; padding:0;}
+    
+    .box{
+      height: 300px;
+      border: 10px dotted rgba(0,0,0,0.5);
+      background-color: skyblue;
+      font-size: 2em;
+      text-align: center;
+      background-image: url(images/frame.png);
+    }
+
+    .box1{
+      width: 500px;
+      /* 기본값 */
+      background-repeat: repeat;
+    }
+    .box2{
+      width: 80%;
+      background-repeat: no-repeat;
+    }
+    .box3{
+      width: 10em;
+      background-repeat: repeat-y;
+    }
+
+    .box4{
+      width: auto;
+      background-repeat: repeat-x;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-wrap">
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+    <div class="box box4">box4</div>
+  </div>
+</body>
+</html>

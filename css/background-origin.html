@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>background-position</title>
+  <style>
+    *{margin:0; padding:0;}
+    
+    .box{
+      height: 300px;
+      border: 10px dashed rgba(255,102,0,0.5);
+      background-color: #ff3;
+      font-size: 2em;
+      text-align: left;
+      color: #f0f;
+      padding: 50px;
+      margin-bottom: 20px;
+
+      background-image: url(images/frame.png);
+      background-repeat: no-repeat;
+    } 
+
+    /* background-position을 지정하지 않고 background-origin은 이미지가 박스모델의 어디부터 시작할건지 지정해주는 것 */
+
+    /* ***** padding-box 패딩영역이 0, 0으로 시작한다. ******/
+    .box1{
+      width: 500px;
+      /* origin 기본값 */
+      background-origin: padding-box;
+    }
+
+    .box2{
+      width: 80%;
+      background-origin: border-box;
+    }
+
+    .box3{
+      width: 10em;
+      background-origin: content-box;
+    }
+
+    .box4{
+      width: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-wrap">
+    <div class="box box1">box1 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum nam at officiis blanditiis explicabo fuga tempore dolorem dolore temporibus ipsum!</div>
+    <div class="box box2">box2 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae distinctio ducimus molestias. Reiciendis numquam eum doloremque sint porro dignissimos laborum?</div>
+    <div class="box box3">box3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum similique necessitatibus libero aut tenetur commodi itaque voluptate fugit quod accusantium!</div>
+    <div class="box box4">box4 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt dolores fuga autem sint non est assumenda eos neque repudiandae deleniti.</div>
+  </div>
+</body>
+</html>

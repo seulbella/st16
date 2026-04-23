@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가상클래스 링크관련</title>
+  <style>
+    
+    li{color: #68f;}
+    /* a태그 
+    1. font- 관련 속성을 상속 받지 않는다.
+    2. 기본값 : href 파란색 밑줄 문자
+    3. 방문한 적 있는 사이트 : href 보라색 밑줄 문자
+    4. active(클릭한) 상태 : href 빨간색 밑줄 문자
+    */
+
+    a{color: #0f0;}
+    /* 하지만 위와 같은 식으로 a태그에 직접 지정해주지 않고,
+    a태그의 상태에 따라서 다음과 같이 가상선택자로 지정해준다. */
+    a:link{color: #333;} /* 기본값 */
+    a:visited{color: #333;} /* 방문한 적 있는 사이트 */
+    a:hover{color: #68f;} /* 마우스를 올린 상태 */
+    a:active{color: #0f0;} /* active 클릭 상태 */
+
+    /* 아래와 같이 color가 동일하면, 한번에 바꿀 수 있다. */
+    a:link,
+    a:visited,
+    a:active{color: #333; text-decoration:none;}
+    a:hover{
+      color: #68f;
+      text-decoration: underline;
+    }
+
+    /* 사용성 측면, 마우스 기기를 사용안하고 tab단추를 누를 때, 키오스크 등 */
+    a:focus{
+      color: #f00;
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+  <ul>
+    <li>가상클래스</li>
+    <li><a href="https://www.naver.com">메뉴1</a></li>
+    <li><a href="https://google.com">메뉴2</a></li>
+    <li><a href="https://www.daum.co.kr">메뉴3</a></li>
+  </ul>
+</body>
+</html>
