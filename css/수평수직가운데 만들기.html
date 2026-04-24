@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 웹폰트 설치 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+  <title>수평수직 가운데 만들기</title>
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* 부모요소 : 정렬 규칙을 만든다. */
+    .exam{
+      /* 브라우저 수평과 수직을 가득 사용하기 */
+      width: 100%; height: 100vh;
+      background-color: #ccc;
+      /* 4. 인라인 .text-wrap 수평정렬 */
+      text-align: center;
+      /* 6. 인라인 .text-wrap 수직정렬 */
+      align-content: center;
+
+      /* 그라디언트 */
+      background:
+        radial-gradient(circle at 10% 20%, rgba(0, 255, 255, 0.60), transparent 23%),
+        radial-gradient(circle at 85% 15%, rgba(231, 202, 14, 0.58), transparent 20%),
+        radial-gradient(circle at 25% 80%, rgba(255, 0, 255, 0.60), transparent 24%),
+        radial-gradient(circle at 72% 70%, rgba(148, 0, 212, 0.45), transparent 26%),
+        linear-gradient(135deg, rgba(5, 24, 86, 0.85), rgba(52, 10, 82, 0.35), rgba(10, 45, 92, 0.95));
+    }
+
+    /* 자식요소 : 정렬 대상이 되는 곳, 정렬할 수 있는 준비가 되어야 한다. */
+    .exam .text-wrap{
+      /* inline-block의 특성 : 너비를 자식의 크기만큼만 설정 (인라인 특징) + 한줄 모두 차지 (블록 레벨의 특성)  */
+      /* 3. 너비를 자식의 크기 만큼만 설정 */
+      /* 정렬할 수 있는 상태를 만드는 태그 'inline-block' */
+      display: inline-block;
+      color: #fff;
+    }
+    .exam .text-wrap .title{
+      /* 1. 웹폰트 Nanum Pen Script */
+      font-family: "Nanum Pen Script", cursive;
+      font-size: 200px;
+      color: #fff;
+      /* 2. 자간설정 */
+      letter-spacing: 10px;
+      /* 5. 텍스트 그림자 */
+      text-shadow: 10px -4px 8px rgb(255, 116, 223);
+
+    }
+    .exam .text-wrap .desc{
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 30px;
+      margin-top: -50px;
+      letter-spacing: 9px;
+      font-weight: 100;
+    }
+
+     .exam .text-wrap .desc > span{
+      color: rgb(255, 116, 223);
+      font-weight: 500;
+     }
+
+
+
+  </style>
+</head>
+<body>
+  
+  <!-- .exam>.text-wrap>div.title+div.desc -->
+  <div class="exam">
+    <div class="text-wrap">
+      <div class="title">SALE</div>
+      <div class="desc">여름을 전하는 <span>감사 인사</span></div>
+    </div>
+  </div>
+</body>
+</html>

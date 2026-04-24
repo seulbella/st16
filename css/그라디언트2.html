@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>오로라 메쉬 그라디언트</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      color: #fff;
+      font-family: "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    }
+
+    .exam {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .exam::before,
+    .exam::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-repeat: no-repeat;
+      background-size: 160% 160%;
+      filter: blur(35px);
+      opacity: 0.9;
+    }
+
+    .exam::before {
+      background-image:
+        radial-gradient(circle at 15% 18%, rgba(0, 255, 255, 0.65) 0%, transparent 24%),
+        radial-gradient(circle at 42% 16%, rgba(231, 202, 14, 0.62) 0%, transparent 20%),
+        radial-gradient(circle at 78% 30%, rgba(255, 0, 255, 0.58) 0%, transparent 24%),
+        radial-gradient(circle at 60% 72%, rgba(0, 255, 255, 0.38) 0%, transparent 24%),
+        radial-gradient(circle at 24% 74%, rgba(231, 202, 14, 0.40) 0%, transparent 22%),
+        radial-gradient(circle at 88% 82%, rgba(255, 0, 255, 0.45) 0%, transparent 26%);
+      mix-blend-mode: screen;
+    }
+
+    .exam::after {
+      background-image:
+        radial-gradient(circle at 12% 56%, rgba(0, 255, 255, 0.25) 0%, transparent 26%),
+        radial-gradient(circle at 34% 40%, rgba(231, 202, 14, 0.30) 0%, transparent 22%),
+        radial-gradient(circle at 72% 24%, rgba(255, 0, 255, 0.30) 0%, transparent 22%),
+        radial-gradient(circle at 48% 82%, rgba(148, 0, 212, 0.30) 0%, transparent 24%),
+        radial-gradient(circle at 85% 54%, rgba(0, 255, 255, 0.22) 0%, transparent 24%);
+      mix-blend-mode: overlay;
+      opacity: 0.85;
+    }
+
+    .exam .mesh {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(0, 255, 255, 0.60), transparent 23%),
+        radial-gradient(circle at 85% 15%, rgba(231, 202, 14, 0.58), transparent 20%),
+        radial-gradient(circle at 25% 80%, rgba(255, 0, 255, 0.60), transparent 24%),
+        radial-gradient(circle at 72% 70%, rgba(148, 0, 212, 0.45), transparent 26%),
+        linear-gradient(135deg, rgba(5, 24, 86, 0.85), rgba(52, 10, 82, 0.35), rgba(10, 45, 92, 0.95));
+      filter: blur(12px);
+      transform: scale(1.05);
+    }
+
+    .exam .content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 100%;
+      padding: 4rem 3rem 3rem;
+      color: #fff;
+      text-shadow: 0 0 22px rgba(0, 0, 0, 0.55);
+    }
+
+    .exam h1 {
+      margin: 0;
+      font-size: clamp(3rem, 8vw, 5rem);
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+    }
+
+    .exam p {
+      margin: 1rem 0 0;
+      font-size: clamp(1rem, 1.8vw, 1.5rem);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div class="exam">
+    <div class="mesh"></div>
+    <div class="content">
+      <h1>GRADIENT</h1>
+      <p>BY SEULBI LEE</p>
+    </div>
+  </div>
+</body>
+</html>

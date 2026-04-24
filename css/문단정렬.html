@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문단정렬</title>
+  <style>
+
+    .exam{
+      background-color: #efefef;
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+
+    .exam1{
+      text-align: left; /* 기본값 */
+    }
+    .exam2{
+      text-align: right;
+      text-align: center;
+    }
+    .exam3{
+      /* justify : 양끝 정렬 */
+      /* text-align: justify; */
+      text-align: left;
+      /* letter-spacing 글자의 자간 설정 */
+      letter-spacing: -1px;
+    }
+  </style>
+</head>
+<body>
+  <!-- ul>li.exam.exam$*3>{상품설명$} -->
+  <ul>
+    <li class="exam exam1">상품설명1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos animi veniam vero ab eligendi repellendus, veritatis distinctio totam inventore sint at velit sed quae cum possimus minima laborum vel. Corporis.</li>
+    <li class="exam exam2">상품설명2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt a error quae dolor quidem velit repellat sed qui minima, fugit voluptate eum unde doloribus earum eius beatae facilis modi ullam.</li>
+    <li class="exam exam3">상품설명3 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo mollitia pariatur consequuntur possimus libero consectetur assumenda voluptatibus nihil? Vel deleniti a, itaque ullam ipsum hic nisi consequatur voluptas eum consequuntur!</li>
+  </ul>
+</body>
+</html>
