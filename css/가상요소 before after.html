@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가상요소 before after</title>
+
+  <!-- 
+  가상요소인 ::before, ::after 또한, 인라인 레벨이며, display:block으로 블록레벨로 변경할 수 있다.
+  이미 꾸며진 html 문서에서 문서 전체를 망가뜨리지 않고 특정 요소 사이를 꾸미고 싶을 때 css 내에 주로 쓰인다. -->
+
+
+  <style>
+    /* reset */
+    *{margin: 0; padding: 0;}
+    h1,h2,h3{font-size: 1.5em;}
+    hr{display: none;}
+
+    /* 브라우저 전체에 배경색이 있지만 내용은 가운데 정렬 */
+
+    .box{
+      margin-top: 100px;
+      padding: 20px 0;
+    }
+
+    .box1{
+      background-color: #f68;
+    }
+    .box2{
+      background-color: #6f8;
+    }
+    .box3{
+      background-color: #86f;
+    }
+
+    .box::before{
+      /* content: "앞"; */
+      content: "";
+      display: block;
+      background-color: #000;
+      width: 3em; height: 4px;
+      margin: auto;
+      margin-top: -70px; /*position*/
+
+    }
+
+    
+    /* .box::after{
+      content: "뒤";
+    } */
+
+    .box .inner{
+      /* 내 부모 컨텐츠 너비 중 80%만 width 값으로 설정한다. */
+      width: 80%;
+      /* 블록레벨을 부모의 가운데 정렬 */
+      margin: 0 auto;
+      margin-top: 70px;
+    }
+
+    .box .inner::before{
+      /* content: "제목"; */
+      content: ""; /* 빈내용 */
+      /* 가상 선택자는 inline 레벨이기 때문에, 속성을 display : block 레벨로 바꿔주면, padding, margin 등을 넣을 수 있다. */
+      display: block;
+      font-weight: bold;
+      font-size: 1.2em;
+      padding-bottom: 1em;
+      background-color: #eee;
+    }
+    /* .box .inner::after{
+      content: '뒤';
+    } */
+
+    .box .content::before{ content:' 앞  ';}
+    .box .content::after{ content:' 뒤 ';}
+
+  </style>
+</head>
+<body>
+  <h1>가상요소 ::before ::after</h1>
+  <hr>
+  <!-- div.box.box$*3>.inner>p.content>lorem15 -->
+  <div class="box box1">
+    <div class="inner">
+      <p class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum natus accusantium eos culpa minus obcaecati!</p>
+    </div>
+  </div>
+  <div class="box box2">
+    <div class="inner">
+      <p class="content">Quidem eos fuga doloribus voluptate iure ullam facilis voluptatibus, tempore quod hic incidunt laudantium dolore!</p>
+    </div>
+  </div>
+  <div class="box box3">
+    <div class="inner">
+      <p class="content">Laboriosam vel repellat accusamus sint nesciunt dicta eos mollitia facilis ducimus impedit? Accusamus, est facere.</p>
+    </div>
+  </div>
+</body>
+</html>
