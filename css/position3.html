@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0; padding: 0;}
+
+    .wrap{
+      margin: 100px 50px;
+      background-color: #cc0;
+    }
+
+    .thumb{
+      background-color: #f00;
+      position: relative;
+      /* normal flow에서 벗어나지 않고, absolute의 기준요소가 됨 */
+      width: 25%;
+      /* .thumb의 크기를 부모의 요소의 4단 배치 오게 하고 싶다. */
+    }
+
+    .thumb img{
+      /* 이미지가 커서 .thumb보다 커진 문제가 생겼어요. */
+      /* 해결: 부모의 컨텐츠 영역을 다 사용할 거에요. */
+      width: 100%;
+      /* img은 인라인 요소라서 태그와 태그 사이의 줄바꿈을 한 글자로 인식하는 문제가 있다. */
+      display: block;
+    }
+    
+    .thumb .like{
+      background-color: #86f;
+    }
+
+    .thumb .sale-box{
+      background-color: #f68;
+    }
+
+    .thumb span{
+      /* span 태그는 인라인이기 때문에 블록레벨로 따로 지정해줘야 함. */
+      display: block;
+      /* 좋아요, 10% 요소의 크기를 w 50px h50px */
+      width: 50px;
+      height: 50px;
+      position: absolute;
+    }
+
+    .thumb span.like{
+      left: 10px; top: 10px;
+    }
+
+    .thumb span.sale-box{
+      right: 10px; top: 10px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="thumb">
+      <img src="images/test-img.png" alt="">
+      <span class="like">좋아요</span>
+      <span class="sale-box">10%</span>
+    </div>
+  </div>
+</body>
+</html>
