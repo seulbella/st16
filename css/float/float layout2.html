@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>float layout2</title>
+  <!-- 
+    float 
+    요즘엔 플로트를 잘 쓰진 않지만, 알아두면 좋다.
+    쓸때는 width 값을 %로 많이 준다.
+  -->
+
+  <style>
+    /* reset */
+    *{margin: 0; padding: 0;}
+    ol,ul{list-style: none;}
+    /* layout */
+    header{
+      background-color: #ccc;
+      min-height: 100px;}
+
+      /* 
+      *content
+      */
+    .content{
+      background-color: #ddd;
+      width: 90%;
+      min-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .content .box{}
+    .content .box1{
+      background-color: #68f;
+      min-height: 100px;
+      width: 15%;
+      float: left; /* 부모나 형제의 왼쪽으로 흘러가라 */    }
+    .content .box2{
+      background-color: #6f8;
+      min-height: 200px;
+      /* width: 75%; */
+      /* calc(값1 - 값2) 값1, 값2 중 한 개는 픽셀단위 */
+      /* 왜 - 100px를 주냐면, margin-left를 밑에 50px를 줬으니까 */
+      /* 박스 사이의 여백(마진) 때문에 전체 너비가 100%를 넘어가는 것을 방지하기 위한 강제적인 공간 확보 */
+      width: calc(75% - 100px);
+      float: left;
+      margin-left: 50px;
+    }
+    .content .box3{
+      background-color: #f68;
+      min-height: 300px;
+      width: 10%;
+      float: right; /* 부모나 형제의 오른쪽에 흘러가라 */
+    }
+
+    /* float의 문제해결 */
+    /* float를 부여한 부모에게 가상 선택자를 이용하여 부모에게 자식요소가 안먹히는 문제를 해결한다. */
+    .content:after{
+      content: "";
+      display: block;
+      /* float 속성이 지정된 요소 뒤로 코딩된 요소들의 float 영향력을 clear */
+      clear: both;
+    }
+
+    footer{
+      background-color: #ccc;
+      min-height: 200px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>헤더</header>
+    <main class="content">
+      <div class="box box1">왼쪽</div>
+      <div class="box box2">가운데</div>
+      <div class="box box3">오른쪽</div>
+    </main>
+    <footer>푸터</footer>
+  </div>
+</body>
+</html>
