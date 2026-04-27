@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>목록css</title>
+
+  <!-- list-style 주 사용 목적 
+  1. 글머리 아이콘을 없앨 때 (list-style : none)
+  2. 글머리 아이콘을 이미지로 넣고 싶을 때 (google icon, 이미지 등)
+  -->
+  
+  <style>
+
+    *{
+      margin: 0; padding: 0;
+    }
+
+    body{
+      margin: 30px;
+    }
+
+    li{
+      background-color: #ccc;
+    }
+
+  
+    ul.exam1, ol.exam2{
+      border: 1px solid #f00;
+      /* 자식요소 중에 부모보다 넘치는 부분은 가려주세요. */
+      overflow: hidden;
+      /* 리스트의 불릿 글머리표가 패딩 안에 있으니, 화면에 표시되는게
+      문제일 때는 padding-left 확인 */
+      padding-left: 3em;
+      list-style: none; /* ol, ul의 글머리표를 사용 x */
+    }
+
+    .exam2 ol, .exam2 ul{
+      /* 목록 태그들의 글머리표 제거 */
+      list-style: none;
+    }
+
+    .exam2 li{
+      background-image: url(images/arrow-right.png);
+      background-repeat: no-repeat;
+      padding-left: 24px;
+      background-size: 12px;
+      background-position: 0 3px;
+      /* 단축표기법을 사용시 언급되지 않은 것들은 다 기본값으로 세팅됨 */
+      /* background: #ccc url() center bottom/cover no-repeat fixed */
+      background: url(images/arrow-right.png) no-repeat 3px/12px;
+    }
+  </style>
+</head>
+<body>
+  <ul class="exam1">
+    <li>menu1</li>
+    <li>menu2</li>
+    <li>menu3</li>
+  </ul>
+  <ol class="exam2">
+    <li>menu1</li>
+    <li>menu2</li>
+    <li>menu3</li>
+  </ol>
+
+  <div class="exam2">
+    <ol>
+      <li>내용1</li>
+      <li>내용2</li>
+      <li>내용3</li>
+    </ol>
+  </div>
+</body>
+</html>
