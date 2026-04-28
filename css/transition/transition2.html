@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    body{margin: 100px;}
+
+    .box{
+      color: cyan;
+      font-size: 3rem;
+      font-weight: 700;
+      /* 자간을 3px */
+      letter-spacing: 3px;
+      background-color: #f68;
+      text-align: center;
+    }
+    .box:hover{
+      color: #f68;
+      font-size: 3rem;
+      font-weight: 200;
+      /* 자간을 3px */
+      letter-spacing: 3px;
+      background-color: cyan;
+      text-align: center;
+
+      /* transition 단축표기법 */
+      transition: all 0.3s;
+      /* transition: font-size 0.3s, font-weight 0.3s; */
+    }
+
+  </style>
+</head>
+<body>
+  <div class="box">
+    SALE
+  </div>
+</body>
+</html>
