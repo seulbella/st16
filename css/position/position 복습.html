@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>position 복습</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .wrap{
+      margin: 50px;
+      background-color: #ccc;
+      padding: 20px;
+    }
+    .section{
+      background-color: #ddd;
+      padding: 20px;
+    }
+    .parent{
+      background-color: beige;
+      padding: 20px;
+      position: relative; /* 현재 좌표값을 기준으로 */
+    }
+    .child:nth-child(1){
+      background-color: magenta;
+      padding: 10px;
+      width: 50px; height: 50px;
+      box-sizing: border-box;
+      position: fixed;
+      right: 0; bottom: 0;
+      
+    }
+    .child:nth-child(2){
+      background-color: cyan;
+      padding: 10px;
+      width: 50px; height: 50px;
+      /* .parent의 오른쪽 위 배치 */
+      position: absolute; /* relative인 부모를 기준으로 */
+      right: 0; top: 0;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="section">
+      <div class="parent">
+        <div class="child">child1</div>
+        <div class="child">child2</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

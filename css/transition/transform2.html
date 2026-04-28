@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>transform2</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .wrap{
+      width: 80%; margin: 50px;
+      background-color: beige;
+    }
+
+    /***
+    clearfix:
+    float가 지정된 요소가 일반흐름에서
+    제외되는 문제를 해결하기 위한 css 선택자와 속성값
+    ***/
+    .wrap::after{
+      content: ""; 
+      display: block; /* after 뒤에 오는 건 inline 요소이기 때문에 변환 */
+      clear: both; /* 상위로 오는 모든 float 요소의 영향을 제거 */
+    }
+
+    .box{
+      width: 50px; height: 50px;
+      float: left; /* 일반흐름에서 제외 */
+    }
+    .box:nth-child(odd){
+      background-color: #f86;
+    }
+    .box:nth-child(even){
+      background-color: #8f6;
+    }
+    .box1{
+      /* transform: translate(30px, 0); */
+      /* transform: scale(200%, 100%); */
+      transform: rotate(45deg);
+    }
+    .box2{
+      /* transform: translateY(50px); */
+      /* transform: scale(200%, 100%); */
+      /* transform-origin: right top; */
+      transform: rotate(45deg);
+      transform-origin: left bottom;
+    }
+    .box3{
+      transform: skew(45deg, 0);
+    }
+    .box4{
+      transform: skew(0,45deg);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+    <div class="box box4">box4</div>
+  </div>
+</body>
+</html>

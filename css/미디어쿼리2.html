@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>미디어쿼리2 media query</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    ol,ul{list-style: none;}
+    a:link,
+    a:visited,
+    a:active{
+      color: currentColor;
+      text-decoration: underline;
+    }
+
+    a:hover{
+      color: aqua;
+      text-decoration: underline;
+    }
+
+    .wrap{}
+    header{
+      background-color: #ccc;
+    }
+    header .inner{
+      width: 90%;
+      max-width: 1400px;
+      margin: 0 auto;
+      background-color: #6cc;
+    }
+
+    /* .inner의 자식요소들의 float지정으로 인해 인식못하는 문제 해결 */
+    header .inner::after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+    header .logo{}
+    header .gnb-wrap{
+      background-color: #cfc;
+      margin-left: 50px;
+    }
+    header .util{
+    }
+    .util a{
+      padding: 1em;
+      background-color: #f0f;
+      margin-left: 1em;
+      display: inline-block;
+    }
+
+    header .m-nav-btn{}
+
+    /* 
+    1. 블록레벨 logo gnb-wrap util m-nav-btn 한줄로 표시 => float or inline-block
+    */
+    .logo, .gnb-wrap{
+      float: left;
+    }
+    .util, .m-nav-btn{
+      float: right;
+    }
+
+    /* 
+    2. gnb 한줄로 표시
+    */
+    .gnb-wrap{}
+    .gnb-wrap ul.gnb{}
+    /* 블록레벨인 li를 한줄로 표시해야 함 */
+    .gnb-wrap ul.gnb li{
+      display: inline-block;
+      padding: 1em;
+      background-color: #fff;
+      margin-right: 1em;
+    }
+    .gnb-wrap ul.gnb li a{}
+
+    /* 
+    3. 햄버거 메뉴를 1024px 이상에서는 표시 x => 1024 이하로 표시해야 함
+    */
+    .m-nav-btn{
+      display: none;
+    }
+    
+    </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="inner">
+        <h1 class="logo">LEE</h1>
+        <nav class="gnb-wrap">
+          <ul class="gnb">
+            <li><a href="">menu1</a></li>
+            <li><a href="">menu2</a></li>
+            <li><a href="">menu3</a></li>
+            <li><a href="">menu4</a></li>
+            <li><a href="">menu5</a></li>
+          </ul>
+        </nav>
+        <div class="util">
+          <a href="">상단기능메뉴1</a>
+          <a href="">상단기능메뉴2</a>
+          <a href="">상단기능메뉴3</a>
+        </div>
+        <!-- //.util -->
+         <div class="m-nav-btn">
+          <img src="images/menu_24dp.png" alt="모바일 사이드 메뉴 펼치기">
+        </div>
+        <!-- //.m-nav-btn -->
+      </div>
+      <!-- //.inner -->
+    </header>
+  </div>
+  <!-- //.wrap -->
+</body>
+</html>

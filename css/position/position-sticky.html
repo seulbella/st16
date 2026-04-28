@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>position sticky</title>
+  <!-- 
+  sticky : 부모 요소의 지정한 위치에 해당 요소가 부딪히는 지점에 고정시킴
+  단점
+      1. 부모요소에 overflow 적용되어 있으면 적용안됨 (overflow:visible 기본값으로 제외)
+      2. left, bottom, top 등 고정시킬 좌표값 지정 안하면 적용 x
+
+  
+  -->
+  <style>
+    *{margin: 0; padding: 0;}
+    /* odd:홀수 */
+    .section:nth-child(odd){
+      background-color: #68f;
+    }
+    /* even:짝수 */
+    .section:nth-child(even){
+      background-color: #f86;
+    }
+
+    .section{
+      /* sticky 적용안되는 실습 테스트 (단점1) */
+      /* overflow: hidden; */
+    }
+
+    .section-title,
+    .content-wrap{
+      width: 80%;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+    /* 브라우저 상단에 해당 section이 보여지는 동안 section-title 상단에 고정 */
+    .section .section-title{
+      background-color: #fff;
+      /* height: 50px; */
+      /* line-height : 한줄 텍스트를 수직으로 가운데 오게 하는 레거시 방법, 높이는 고정 */
+      /* line-height: 50px; */
+      font-size: 1.5em;
+      padding: 1em 2em; /* 글자 크기에 따라 수직크기가 달라짐 */
+
+      position: sticky;
+      top: 0; /* 부모 요소의 좌표값을 나타냄 */
+      top: 50%;
+    }
+    .section .content-wrap{
+      background-color: beige;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <!-- .wrap>.section.section$*4>p.section-title{section$}+.content-wrap -->
+  <div class="wrap">
+    <div class="section section1">
+      <p class="section-title">section1</p>
+      <div class="content-wrap">content-wrap</div>
+    </div>
+    <div class="section section2">
+      <p class="section-title">section2</p>
+      <div class="content-wrap">content-wrap</div>
+    </div>
+    <div class="section section3">
+      <p class="section-title">section3</p>
+      <div class="content-wrap">content-wrap</div>
+    </div>
+    <div class="section section4">
+      <p class="section-title">section4</p>
+      <div class="content-wrap">content-wrap</div>
+    </div>
+  </div>
+</body>
+</html>
