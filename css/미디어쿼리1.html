@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" 
+  content="width=device-width, initial-scale=1.0">
+  <title>미디어쿼리1 media query</title>
+  <style>
+    body{
+      background-color: #ccc;
+      font-size: 16px;
+    }
+    body::before{
+      content: "데스크탑 미디어쿼리";
+    }
+
+    @media (max-width:1400px){
+      body{
+      background-color: #fcc;
+      }
+      body::before{
+        content:"최대크기 1400픽셀, 즉 1400이하인 모니터"
+      }
+    }/* 1400px 미디어쿼리 마감*/
+    @media (max-width:1200px){
+      body{
+      background-color: #cfc;
+      }
+      body::before{
+        content:"최대크기 1200픽셀, 즉 1200이하인 모니터"
+      }
+    }/* 1200px 미디어쿼리 마감*/
+
+    @media (min-width:1000px) and (max-width:1200px){
+      body{
+      background-color: #ccf;
+      }
+      body::before{
+        content:"최대크기 1200픽셀,최소크기 1000픽셀"
+      }      
+    }
+
+  </style>
+</head>
+<body>
+  
+</body>
+</html>
