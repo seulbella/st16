@@ -40,17 +40,18 @@
     header .gnb-wrap{
       background-color: #cfc;
       margin-left: 50px;
+      display: block;
     }
     header .util{
+      position: relative;
     }
     .util a{
       padding: 1em;
       background-color: #f0f;
       margin-left: 1em;
       display: inline-block;
+      
     }
-
-    header .m-nav-btn{}
 
     /* 
     1. 블록레벨 logo gnb-wrap util m-nav-btn 한줄로 표시 => float or inline-block
@@ -65,7 +66,9 @@
     /* 
     2. gnb 한줄로 표시
     */
-    .gnb-wrap{}
+    .gnb-wrap{
+
+    }
     .gnb-wrap ul.gnb{}
     /* 블록레벨인 li를 한줄로 표시해야 함 */
     .gnb-wrap ul.gnb li{
@@ -80,9 +83,29 @@
     3. 햄버거 메뉴를 1024px 이상에서는 표시 x => 1024 이하로 표시해야 함
     */
     .m-nav-btn{
-      display: none;
+      /* display: none; */
+      position: absolute;
+      top: 1em; right: 1em;
+      
     }
-    
+
+    /* 장비특성에 맞는 클래스명으로 display를 지정하는 것을 권합니다. */
+    @media (min-width:1025px){
+      .mobile-only-block{
+        display: none;
+      }
+    }
+
+    @media (max-width:1024px){
+      .pc-only-block{
+        display: none !important; 
+      }
+
+      .mobile-only-block{
+        display: block;
+      }
+    }/*@media (max-width:1024px){*/
+
     </style>
 </head>
 <body>
@@ -90,7 +113,7 @@
     <header>
       <div class="inner">
         <h1 class="logo">LEE</h1>
-        <nav class="gnb-wrap">
+        <nav class="gnb-wrap pc-only-block">
           <ul class="gnb">
             <li><a href="">menu1</a></li>
             <li><a href="">menu2</a></li>
@@ -105,7 +128,7 @@
           <a href="">상단기능메뉴3</a>
         </div>
         <!-- //.util -->
-         <div class="m-nav-btn">
+         <div class="m-nav-btn mobile-only-block">
           <img src="images/menu_24dp.png" alt="모바일 사이드 메뉴 펼치기">
         </div>
         <!-- //.m-nav-btn -->
