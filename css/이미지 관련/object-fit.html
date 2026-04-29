@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>object-fit</title>
+  <style>
+    .exam1{width: 200px;}
+    .exam2{height: 300px;}
+    /* 이미지 특정 크기로 표시해야할 때
+    
+    
+    */
+    .exam3{
+      background-color: #fcc;
+      width: 400px; height: 200px;
+      /* 가로세로 비율 상관없이 오브젝트 영역을 다보이게 채워줘. */
+      object-fit: fill;
+      /* 이미지의 가로세로 비율을 유지한 상태로, 오브젝트 크기 보다 작아져도, 켜져도 되니까 다 보여줘 */
+      object-fit: contain;
+      /* 이미지를 가로세로 비율을 유지한 상태로 오브젝트 크기에 가득 채워줘. */
+      object-fit: cover;
+      object-position: center top;
+    }
+  </style>
+</head>
+<body>  
+  <img src="../images/test-img.png" alt="" class="exam1">
+  <img src="../images/test-img.png" alt="" class="exam2">
+  <img src="../images/test-img.png" alt="" class="exam3">
+</body>
+</html>

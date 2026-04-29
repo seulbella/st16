@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>picture</title>
+  <!-- 모바일 기준 : min-width (꼭 오름차순으로, 왜냐하면 html은 위에서 아래로 문서를 읽기 때문에) -->
+  <!-- pc 기준 : max-width (꼭 내림차순으로, 왜냐하면 html은 위에서 아래로 문서를 읽기 때문에) -->
+   
+
+</head>
+<body>
+  <h1>picture</h1>
+   <picture>
+    <source srcset="./img/img_480x800.jpg" media="(max-width: 576px)">
+    <source srcset="./img/img_768x768.jpg" media="(max-width: 768px)">
+    <source srcset="./img/img_1920x810.jpg" media="(max-width: 1024px)">
+    <img src="img/img_1920x810.jpg">
+   </picture> 
+
+  <style>
+    picture{width:100%}
+    picture source, picture img{width:100%;}
+  </style>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배경 이미지 활용</title>
+  <!-- z-index 레이어 순서 관리
+  웹 페이지에서 요소들이 서로 겹쳐질 때, 어떤 요소가 사용자의 눈에 더 가깝게(앞쪽에) 보일지 결정하는 수직 쌓임 순서(Stacking Order)를 제어하는 CSS 속성이다.
+
+  - position 속성 필수: z-index는 요소가 정적 위치(static)가 아닐 때만 작동합니다. 즉, position 속성이 아래 값 중 하나여야 합니다.
+
+  ㄴrelative (상대 위치)
+  ㄴabsolute (절대 위치)
+  ㄴfixed (고정 위치)
+  ㄴsticky (스크롤에 따른 고정 위치)
+  
+  - 정수 값: z-index는 양의 정수, 음의 정수, 혹은 0을 값으로 가집니다. (기본값은 auto입니다.)
+
+  - 주의사항:
+  1. 자식 요소의 z-index는 부모 요소의 스택 컨텍스트 내에서만 비교
+    ㄴ 예를 들어, 부모 요소 A의 z-index가 1이고, 부모 요소 B의 z-index가 2라면, A 내부의 자식 요소에 아무리 높은 z-index(예: 9999)를 주어도 부모인 B보다 위로 올라올 수 없습니다.
+  2. 9999, 99999처럼 무작위로 큰 숫자를 남발하면 관리하기 매우 힘들어집니다.
+  3. 음수 값 활용 : z-index는 음수(-1, -99 등)도 가능합니다. 이를 활용하면 배경 요소나 장식적인 요소들을 본래 콘텐츠보다 뒤쪽으로 밀어낼 때 아주 유용합니다. 
+   -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Poor+Story&display=swap" rel="stylesheet">
+  <!-- 
+  .noto-sans-kr-<uniquifier> {
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  }
+  
+  .poor-story-regular {
+    font-family: "Poor Story", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    }
+    -->
+    <style>
+    *{margin: 0; padding: 0;}
+    .wrap{}
+    .visual-section{
+      /* 100vw는 스크롤바를 합친크기를 사용하기 때문에 잘 사용하지 않는다. */
+      /* viewport의 크기를 다 사용할 때 쓰는 방법 = width : 100% */
+      width: 100%;
+      height: 100vh;
+      background-color: #97948d;
+      background-image: url(../images/background-test.jpg);
+      background-repeat: no-repeat;
+      background-position: right top;
+      background-size: auto 200vh;
+      /* inline-block을 가운데 정렬 */
+      text-align: center;
+      align-content: center ;
+      /* .visual-section::after 기준 요소를 위해 적용 */
+      position: relative;
+    }
+
+    .visual-section::after{
+      content:"";
+      display: block;
+      background-color: rgb(0, 255, 255,0.5);
+      width: 100%; height: 100%;
+      /* z-index 레이어 순서 관리
+      z-index는 레이어가 일반흐름에서 벗어나진 않지만 위치를 이동할 수 있는 relative 상태에서 보통 쓰인다. */
+      position: absolute;
+      left: 0; top: 0;
+      z-index: 10;
+    }
+
+    .visual-section .text-wrap{
+      /* z-index 레이어 순서 관리 */
+      position: relative;
+      z-index: 20;
+      display: inline-block;
+      width: 50%;
+      background-color: rgba(0, 0, 0, 0.7);
+      font-family: "Noto Sans KR", sans-serif;
+      color: #8bffb7;
+      padding: 1rem 2rem;
+    }
+    .visual-section .text-wrap .title{
+      /* font-family: "Noto Sans KR", sans-serif; */
+      font-size: 4rem;
+      font-weight: 100;
+      /* color: #8bffb7; */
+    }
+    .visual-section .text-wrap .desc{
+      /* font-family: "Noto Sans KR", sans-serif; */
+      font-size: 1rem;
+      font-weight: 100;
+      /* color: #fff; */
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="visual-section">
+      <!-- .test-wrap>p.title>lorem3^p.desc>lorem20 -->
+      <div class="text-wrap">
+        <p class="title">Lorem, ipsum dolor.</p>
+        <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur magni fugit ut quo voluptatibus explicabo inventore modi nihil. Est, eius.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
