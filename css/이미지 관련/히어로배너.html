@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>히어로배너</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    /* .hero-banner의 부모의 콘텐츠 영역을 모두 사용 */
+    .hero-banner{width: 100%;}
+    .hero-banner picture{
+      display: block;
+      background-color: #f68;
+    }
+    
+    .hero-banner picture source,
+    .hero-banner picture img{
+      width: 100%;
+    }
+    
+    .hero-banner picture source{}
+    .hero-banner picture img{
+      opacity: 0.5;
+      display: block;
+    }
+    
+    @media (max-width:768px){
+
+      .hero-banner picture source,
+      .hero-banner picture img{
+        width: 100%;
+        height: calc(100vh - (50px + 50px));
+        object-fit: cover;
+        object-position: left bottom;
+      }
+
+    } /* @media (max-width:768px) */
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero-banner">
+      <picture>
+        <!-- 
+        picture 태그 자식인 source 태그 입력 순으로 브라우저에 표시할 수 있는 최종 파일을 확인하면서 위에서 아래로 내려간다. (1개만 표시해야 되기 때문에) 만약, 모든 source가 표시할 수 없는 상태면 마지막 img 태그를 표시.
+        -->
+        <source srcset="../images/smartbanner-01-01-mobile.png" media="(max-width:768px)">
+        <img src="../images/smartbanner-01-01-pc.png" alt="">
+       </picture>
+    </div>
+  </div>
+</body>
+</html>
