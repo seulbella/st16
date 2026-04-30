@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>table3 테두리 배경색</title>
+  <!-- table-layout-->
+  <style>
+    *{margin: 0; padding: 0;}
+    body{margin: 50px;}
+    
+    table{
+      margin-bottom: 20px;
+    }
+
+    /* 박스 사이징은 테이블 태그 전부 모두 줘야 함 */
+    table, tr, th, td, tbody, tfoot{
+      box-sizing: border-box;
+    }
+
+    /* table1 */
+    .table1{
+      /* collapse : 내용에 따라 균등하게 각 셀의 크기가 배분됨 */
+      table-layout: auto; /* 기본값 */
+      border-collapse: collapse;
+      width: 100%;
+      text-align: center;
+      border-left: 1px solid #000;
+      border-right: 1px solid #000;
+      
+    }
+    
+    .table1 tr:first-child{
+      background-color: #000;
+      color: #fff;
+    }
+
+    .table1 th, .table1 td{
+      border-bottom: 1px solid #000;
+      padding: 0.5rem;
+    }
+
+    .table1 th:nth-child(1),
+    .table1 td:nth-child(1){
+      width: 150px;
+    }
+    
+    /* table2 */
+    .table2{
+      /* fixed : 각 셀의 넓이가 고정됨 */
+      table-layout: fixed; /* 기본값 */
+      border-collapse: collapse;
+      width: 100%;
+      border-top: 4px solid #000;
+    }
+
+    /* 선,배경 */
+    .table2 th,
+    .table2 td{
+      border-bottom: 1px solid #000;
+      border-right: 1px solid #000;
+      padding: 0.5rem;
+    }
+
+    /* 선 없앰 */
+    .table2 th:last-child,
+    .table2 td:last-child{
+      border-right: none;
+    }
+
+    /* 크기 */
+    .table2 th:nth-child(1),
+    .table2 td:nth-child(1){
+      width: 150px;
+    }
+    .table2 th:nth-child(2),
+    .table2 td:nth-child(2){
+      width: 600px;
+    }
+
+    /* 수직정렬시 */
+    .table2 tr:last-child td:nth-last-child(1){
+      vertical-align: middle; /* 기본값 */
+      vertical-align: bottom; 
+    }
+    
+  </style>
+</head>
+<body>
+  <table class="table1">
+    <tr>
+      <th>제목1</th>
+      <th>제목2</th>
+      <th>제목3</th>
+      <th>제목4</th>
+    </tr>
+    <tr>
+      <td>내용1</td>
+      <td>내용2</td>
+      <td>내용3</td>
+      <td>내용4</td>
+    </tr>
+    <tr>
+      <td>내용1</td>
+      <td>내용2</td>
+      <td>내용3</td>
+      <td>내용4</td>
+    </tr>
+    <tr>
+      <td>내용1</td>
+      <td>내용2</td>
+      <td>내용3</td>
+      <td>내용4</td>
+    </tr>
+    <tr>
+      <td>내용1</td>
+      <td>내용2</td>
+      <td>내용3</td>
+      <td>내용4</td>
+    </tr>
+  </table>
+  <table class="table2">
+    <tr>
+      <th>제목1</th>
+      <th>제목2</th>
+      <th>제목3</th>
+      <th>제목4</th>
+    </tr>
+    <tr>
+      <td>내용1</td>
+      <td>내용2</td>
+      <td>내용3</td>
+      <td>내용4</td>
+    </tr>
+    <tr>
+      <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet praesentium ex porro nulla modi quo quos unde est nesciunt. Beatae numquam corrupti obcaecati magnam dolor fugiat doloribus tempora rerum amet.</td>
+      <td>내용2</td>
+      <td>내용3</td>
+      <td>내용4</td>
+    </tr>
+  </table>
+</body>
+</html>
