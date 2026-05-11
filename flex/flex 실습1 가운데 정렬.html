@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex1 수평 수직 가운데 정렬</title>
+  <link rel="stylesheet" href="../reset.css">
+  <style>
+    .visual-section{
+      display: flex;
+      background-color: #ffc;
+      /* viewport를 가득 채우기 */
+      box-sizing: border-box;
+      width: 100%; /* 스크롤바 제외한 크기 */
+      height: 100vh; /* 스크롤바가 포함됨 vw, vh */
+      /* 2. 방향 : flex-direction:row; */
+      /* 5. 줄바꿈 : 가운데에 올 것이므로 필요없음 */
+      /* 6. 여백 : 안줌 */
+      /* 7. 정렬 : justify-content, align-items */
+      justify-content: center;
+      align-items: center;
+    }
+
+    .visual-section .text-wrap{
+      /* flex item */
+      background-color: #cff;
+      /* 3. item 의 확장 및 축소 */
+      /* flex-grow: 0;
+      flex-shrink: 1; */
+      flex: none;
+      /* 4. item 크기 */
+      width: 50%;
+      min-width: 300px;
+      max-height: 500px;
+      box-sizing: border-box;
+      /* 부모에 정렬 justify-content, align-items를 줬기 때문에
+      gap을 넣으면 레이아웃이 원하는 대로 안나올 가능성이 커서
+      대신 padding을 삽입함. */
+      padding: 1rem 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="visual-section">
+      <div class="text-wrap">
+        <div class="title">
+          Title
+          <div class="desc">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel laudantium architecto rerum. Nesciunt voluptas corrupti ducimus quia ex voluptatibus. Suscipit explicabo porro nobis iusto officia nisi placeat atque minima dolores?
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

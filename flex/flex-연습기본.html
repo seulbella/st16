@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex3-flex container</title>
+  <link rel="stylesheet" href="../reset.css">
+    <!-- 
+    1. flex 선언 container
+    2. flex의 방향을 결정 container (row 기본값)
+    3. 아이템의 축소/확장을 결정 item (shrink:0 grow(확장):x 기본값)
+    4. 아이템의 크기 결정 item (flex-basis > width, height)
+    ㄴ flex-basis:auto; 기본값 -> width, height 지정값 우선
+    ㄴ 반대로, basis 값을 지정할 경우 flex-basis가 최우선
+    ㄴ width: calc(아이템크기% - (여백 * (단 - 1) / 단))
+    5. 아이템의 줄바꿈을 결정 container
+    6. 여백관리 gap container margin item
+    7. 정렬 container / item, margin
+
+        /* 기본값 설정 상태 */
+        /* flex-container */
+    /* 2 방향 */
+    /* flex-direction: row; */
+    /* 5 줄바꿈 */
+    /* flex-wrap: nowrap; */
+    /* 6 여백 */
+    /* gap: 0; */
+    /* 7 정렬 */
+    /* 주축 justify-content: flex-start; */
+    /* 교차축 align-content : stretch; */
+
+      /* item */
+    /* 3 */
+    /* flex-grow: 0; */
+    /* flex-shrink: 1; */
+    /* flex-basis: auto; */
+    /* 4 */
+    /* width: auto; */
+    /* height: auto; */
+  -->
+  <style>
+   .wrap{
+    margin: 50px;
+   }
+   .container{
+    background-color: #fcc;
+   }
+
+   .item{
+    border: 1px solid #999;
+
+   }
+
+   .flex{
+    display: flex;
+
+   }
+
+   .flex .item{
+
+   }
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="container flex">
+      <div class="item">item1</div>
+      <div class="item">item2</div>
+      <div class="item">item3</div>
+      <div class="item">item4</div>
+    </div>
+  </div>
+</body>
+</html>
