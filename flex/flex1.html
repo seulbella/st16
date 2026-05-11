@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex1</title>
+  <link rel="stylesheet" href="../reset.css">
+  <style>
+   .wrap{
+    margin: 50px;
+   }
+   .container{
+    /* width: auto; */
+    padding: 1rem;
+    background-color: #fcc;
+   }
+
+   .item{
+    border: 1px solid #999;
+    width: 100px;
+   }
+
+   /* 1. 고전적인 방법 : float */
+   .float{
+    float: left;
+   }
+
+   /* float item을 float 컨테이너가 인식할 수 있게 문재 해결 clearfix */
+   .float::after{
+    content: "";
+    display: block;
+    clear: both;
+   }
+
+   /* 2. inline-block */
+   .inline-block{
+    font-size: 0;
+   }
+
+   .inline-block .item{
+    display: inline-block;
+    font-size: 1rem;
+   }
+
+   /* 3. flex */
+   .flex{
+    display: flex;
+   }
+
+   .flex .item{
+  
+   }
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="container flex">
+      <div class="item">item1</div>
+      <div class="item">item2</div>
+      <div class="item">item3</div>
+      <div class="item">item4</div>
+    </div>
+  </div>
+</body>
+</html>

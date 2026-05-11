@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>table1 with border-collapse</title>
+  <!-- 테이블ㄱ
+   
+  -테이블의 자식들은 모두 부모를 따라간다.
+  -개별적으로 지칭해주지 않는 한, 부모 사이즈를 나눠갖는다.
+  -박스 사이징을 보더 박스로 지칭해줄 경우, 요소 하나 하나 모두 지칭해줘야 한다.
+  -테이블 내의 하위 요소인 th,td 등의 개별적인 위치에 속성을 지정해주고 싶을 때에는, 가상 선택자 몇 번째 자식을 지칭하는 태그인 nth:child()로 지칭해줘야 한다.  
+
+  border-collapse의 속성 값
+  ㄴseparate(기본값) : 셀의 테두리를 분리해서 표시
+  ㄴcollapse: 인접한 셀의 테두리를 간격을 없애고 표시
+  -->
+  <style>
+    *{margin: 0; padding: 0;}
+    body{margin: 50px;}
+    
+    table{
+      border: 1px solid #000;
+      margin-bottom: 20px;
+    }
+
+    /* 박스 사이징은 테이블 태그 전부 모두 줘야 함 */
+    table, tr, th, td, tbody, tfoot{
+      box-sizing: border-box;
+    }
+
+    tr{border: 1px solid #f00;}
+    th,td{border: 1px solid #00f;}
+
+    .table1{
+      border-collapse: separate;
+      width: 400px;
+    }
+
+    /* 테이블 내의 하위 요소들 중 몇번째의 th, td 등을 지칭하고
+    싶을 때는 nth-child로 지정해주는 것이 좋다. */
+    .table1 th:nth-child(1),
+    .table1 td:nth-child(1){
+      width: 200px;
+    }
+
+    .table2{
+      border-collapse: collapse;
+      width: 80%;
+    }
+
+    .table2 th:nth-child(1),
+    .table2 td:nth-child(1){
+      width: 100px;
+    }
+
+    .table2 th:nth-child(3),
+    .table2 td:nth-child(3){
+      width: 80px;
+    }
+
+    .table2 th:nth-child(4),
+    .table2 td:nth-child(4){
+      width: 80px;
+    }
+  </style>
+</head>
+<body>
+  <table class="table1">
+    <tr>
+      <th>제목1</th>
+      <th>제목2</th>
+      <th>제목3</th>
+      <th>제목4</th>
+    </tr>
+    <tr>
+      <td>Lorem. ipsum.</td>
+      <td>내용2</td>
+      <td>내용3</td>
+      <td>내용4</td>
+    </tr>
+    <tr>
+      <td>내용1</td>
+      <td>내용2</td>
+      <td>내용3</td>
+      <td>내용4</td>
+    </tr>
+  </table>
+  <table class="table2">
+    <tr>
+      <th>제목1</th>
+      <th>제목2</th>
+      <th>제목3</th>
+      <th>제목4</th>
+    </tr>
+    <tr>
+      <td>내용1</td>
+      <td>Lorem, ipsum.</td>
+      <td>내용3</td>
+      <td>내용4</td>
+    </tr>
+    <tr>
+      <td>내용1</td>
+      <td>내용2</td>
+      <td>내용3</td>
+      <td>내용4</td>
+    </tr>
+  </table>
+</body>
+</html>

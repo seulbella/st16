@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>table2 - table layout</title>
+  <!-- table-layout-->
+  <style>
+    *{margin: 0; padding: 0;}
+    body{margin: 50px;}
+    
+    table{
+      border: 1px solid #000;
+      margin-bottom: 20px;
+    }
+
+    /* 박스 사이징은 테이블 태그 전부 모두 줘야 함 */
+    table, tr, th, td, tbody, tfoot{
+      box-sizing: border-box;
+    }
+
+    tr{border: 1px solid #f00;}
+    th,td{border: 1px solid #00f;}
+
+    /* table1 */
+    .table1{
+      /* collapse : 내용에 따라 균등하게 각 셀의 크기가 배분됨 */
+      table-layout: auto; /* 기본값 */
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .table1 th:nth-child(1),
+    .table1 td:nth-child(1){
+      width: 150px;
+    }
+    
+    /* table2 */
+    .table2{
+      /* fixed : 각 셀의 넓이가 고정됨 */
+      table-layout: fixed; /* 기본값 */
+      border-collapse: collapse;
+      width: 100%;
+    }
+    .table2 th:nth-child(1),
+    .table2 td:nth-child(1){
+      width: 150px;
+    }
+    .table2 th:nth-child(2),
+    .table2 td:nth-child(2){
+      width: 600px;
+    }
+    
+  </style>
+</head>
+<body>
+  <table class="table1">
+    <tr>
+      <th>제목1</th>
+      <th>제목2</th>
+      <th>제목3</th>
+      <th>제목4</th>
+    </tr>
+    <tr>
+      <td>Lorem. ipsum.</td>
+      <td>Lorem, ipsum dolor.</td>
+      <td>내용3</td>
+      <td>내용4</td>
+    </tr>
+    <tr>
+      <td>내용1</td>
+      <td>내용2</td>
+      <td>내용3</td>
+      <td>내용4</td>
+    </tr>
+  </table>
+  <table class="table2">
+    <tr>
+      <th>제목1</th>
+      <th>제목2</th>
+      <th>제목3</th>
+      <th>제목4</th>
+    </tr>
+    <tr>
+      <td>Lorem, ipsum.</td>
+      <td>Lorem, ipsum.</td>
+      <td>내용3</td>
+      <td>내용4</td>
+    </tr>
+    <tr>
+      <td>내용1</td>
+      <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum possimus similique quas perferendis, molestias voluptas perspiciatis repudiandae, laboriosam, voluptatibus veritatis modi magnam expedita. Doloribus, praesentium. Aliquid magnam necessitatibus explicabo consectetur?</td>
+      <td>내용3</td>
+      <td>내용4</td>
+    </tr>
+  </table>
+</body>
+</html>

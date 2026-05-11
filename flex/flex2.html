@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex2 flex컨테이너와 flex 아이템</title>
+  <link rel="stylesheet" href="../reset.css">
+  <style>
+   .wrap{
+    margin: 50px;
+   }
+   .container{
+    /* width: auto; */
+    /* padding: 1rem; */
+    background-color: #fcc;
+   }
+
+   .item{
+    border: 1px solid #999;
+    box-sizing: border-box;
+   }   
+
+   .flex{
+    /* 1. flex box(flex 컨테이너)선언 */
+    display: flex;
+    /* 2. flex의 방향 설정 
+      주축의 방향의 flex-direction 과 동일 */
+    /* flex-direction: row; 기본값 */
+    flex-direction: row;
+    /* flex-direction: column; */
+
+    /* 5. flex-wrap
+      만약에 item에 flex-shrink:0; 을 설정했을때
+      부모의 크기보다 넘쳐나는 item을 줄바꿈 */
+    flex-wrap: nowrap; /* 기본값 */
+    flex-wrap: wrap;
+    /* 6. flex 아이템 사이의 여백관리 */
+    gap: 5px 10px;
+    /* 7. 아이템의 정렬 */
+   }
+
+   /* flex 컨테이너의 직계자식은 flex아이템이 된다. */
+   .flex .item{
+     /* width: 25%; */
+     /* 
+        한 라인에 4단이 오게 하고 싶지만, gap(여백)을 줘서 3단만 오기 때문에
+        이를 조절하기 위한 속성 계산법 calc() */
+     /* 즉, 컨테이너에 gap을 지정했을 때 계산식
+        calc(나누고 싶은 단을 표현한 퍼센트 값 - (gap * (단의 수 - 1) / 단의수)
+      */
+     width: calc(25% - (10px * (4 - 1)) / 4);
+     /* 4. flex item 주축크기 확장/축소 결정 */
+    /* 아이템을 부모의 공간에 맞게 확장 */
+    flex-grow: 0;
+    /* 아이템을 부모의 공간에 맞게 축소 */
+    flex-shrink: 0;
+   }
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="container flex">
+      <div class="item">Lorem.</div>
+      <div class="item">item2</div>
+      <div class="item">item3</div>
+      <div class="item">item4</div>
+      <div class="item">Lorem.</div>
+      <div class="item">item2</div>
+      <div class="item">item3</div>
+      <div class="item">item4</div>
+    </div>
+  </div>
+</body>
+</html>
