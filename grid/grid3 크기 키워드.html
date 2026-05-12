@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>grid3 행열의 크기지정 키워드 (fr, minmax, fit-content) </title>
+  <link rel="stylesheet" href="../reset.css">
+  <style>
+    /* 
+    1. grid container : grid 선언
+      > display : grid
+    2. grid container : 행(줄)과 열(칸)의 갯수, 크기 정하기
+      > grid-template-row : 1줄(크기px), 2줄, ..
+      > grid-template-column : 1칸, 2칸, 3칸, ..
+    2-1. repeat로 반복 선언
+      > grid-template-rows: repeat(3(줄), 100px(크기))
+    2-1-2. 크기 단위를 fr(등분)로 선언
+      > grid-template-rows: repeat(3, 1fr);
+      | 3줄 위주로 1fr 이면 3등분
+    2-2. 명시적 그리드 선언 (위 코드 참조)
+    2-3. 암시적 그리드 선언 : 나의 그리드 시스템에 선언되지 않은 요소의 암묵적인 크기를 선언하는 것 (생략가능)
+      > grid-auto-rows: 1줄(크기px)
+      > grid-auto-column: 1칸(크기px)
+    2-4. span : 합친다는 뜻으로, 그리드 크기 선언 시 아래와 같이 간단하게 표기할 수 있다.
+      > grid-column: 1/span 2;
+      > grid-column: 1/2; (위와 동일한 표기법)
+    3. grid item : item의 배치를 설정
+      > grid-row : 1/3 (예시)
+      > grid-column : 2/4 (예시)
+    4. 여백
+    5. 정렬
+    */
+
+    /* 모양 */
+    .wrap{
+      margin: 50px;
+    }
+    .grid-container{
+      background-color: #ccc;
+    }
+    .grid-container .item{
+      background-color: dodgerblue;
+      border: 1px solid magenta;
+      box-sizing: border-box;
+    }
+
+    /* grid */
+    .grid-container{
+      display: grid;
+      grid-template-rows: repeat(3, 100px);
+      /* 크기 auto : 컨테이너에 남은 공간 */
+      grid-template-columns: 100px auto 2rem;
+      /* fr */
+      grid-template-columns: 3fr 3fr 3fr 3fr;
+      grid-template-columns: repeat(4, 3fr);
+      /* minmax(최소값, 최대값)
+      최소값 fr단위를 사용하지 못합니다.
+       */
+       grid-template-columns: repeat(4, minmax(150px, 1fr));
+       grid-template-columns: repeat(3, minmax(150px, 33.33%));
+      
+      /* fit-content(최대크기) 
+         아이템의 내용이 최대크기보다 크지 않을 경우 content(내용)에 맞춰주고(fit), 내용이 제한된 최대크기보다 커질때는 최대크기만 유지해준다. */
+      /* 300px 보다 아이템 내용이 작을 경우 내용크기, 아니면 300px이상은 커지지 말아라. */
+      grid-template-columns: repeat(3, fit-content(300px));
+    }
+
+    /* grid item */
+    .grid-container .item{
+    }
+    .grid-container .item:nth-child(1){
+
+    }
+    .grid-container .item:nth-child(2){
+
+    }
+    .grid-container .item:nth-child(3){
+
+    }
+    .grid-container .item:nth-child(4){
+
+    }
+    .grid-container .item:nth-child(5){
+
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="grid-container">
+      <div class="item">Lorem ipsum dolor sit.</div>
+      <div class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, maxime.</div>
+      <div class="item">아이템3</div>
+      <div class="item">아이템4</div>
+      <div class="item">아이템5</div>
+      <div class="item">아이템6</div>
+      <div class="item">아이템7</div>
+      <div class="item">아이템8</div>
+    </div>
+  </div>
+</body>
+</html>
