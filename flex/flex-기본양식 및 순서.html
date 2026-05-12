@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex-연습기본</title>
+  <link rel="stylesheet" href="../reset.css">
+ <!--
+    <플렉스 선언 기본순서>
+    1. flex container : flex 선언
+      > display : flex 
+    2. flex container : flex item의 방향 결정 
+      > flex-direction : row / column 
+    3. flex item : 아이템이 부모의 크기에 맞게 확장과 축소를 할지 결정
+      > flex-grow : 0 / flex-shrink : 1
+    4. flex item : 아이템의 크기 결정 
+      > flex-basis : auto;
+      > 값을 넣으면 direction 방향이 row 일때 width, column 이면 height 값으로 지정됨
+      > 우선 순위 : flex-basis 직접 지정 값 > width, height 별도 지정 값
+      > **gap과 함께 여백이 있는 단으로 구성할 때 아래 계산식으로 width 값을 지정해주면 된다.
+        | width: calc(아이템크기% - (여백 * (단 - 1) / 단));
+    5. flex container : 아이템이 컨테이너보다 크기가 클 때 줄바꿈을 결정
+      > flex-wrap : nowrap / wrap
+    6. 여백관리 : container 는 gap / item은 margin 으로 지정하기
+      > gap : 0px;
+        | gap : row-gap column-gap;
+        | **gap은 item 양 끝(container 가장자리)에는 여백을 만들지 않지만, margin은 양 끝에도 여백이 생기기 때문에 같은 방향으로 둘 다 지정하게 되면 단순 합산 된다. (gap, margin 둘 다 지정하면 의도하는 레이아웃 결과 값을 잘 얻지 못할 수도 있다.)
+        | **그래서 4번의 gap과 함께 여백이 있는 단으로 구성하는 방법을 따르면 된다.
+    7. flex container : 주축(justify), 교차축(align) 방향 정렬
+      > justify-content : flex-start;
+        | flex-end, center, space-between, space-around, space-evenly
+      > align-items : stretch; 
+        | flex-start, flex-end, center, baseline
+      > align-content : stretch;
+        | flex-wrap의 속성에 의해 여러 줄이 발생 했을 때 적용
+        | align-item과 동시에 지정하였을 땐 align-content가 우선
+        | flex-start, flex-end, center, space-between, space-around
+  -->
+  <style>
+    /* 모양 */
+   .inner{background-color: #ccc;}
+   #top_nav_box{background-color: #fcc; box-sizing: border-box;}
+   #top_nav_box>div{box-sizing: border-box; padding: 0.5rem;}
+   #top_nav_box .top_logo{background-color: beige;}
+   #top_nav_box .top_category{background-color: dodgerblue;}
+   #top_nav_box .top_mypage{background-color: purple;}
+   
+   /* 크기 */
+   /* #top_nav_box .top_logo{width: 100px;}
+   #top_nav_box .top_category{min-width: 600px; max-width: 700px;}
+   #top_nav_box .top_mypage{width: 150px;}  */
+   
+   /* flex 학습용 */
+   .inner{}
+   #top_nav_box{}
+   #top_nav_box .top_logo{}
+   #top_nav_box .top_category{}
+   #top_nav_box .top_mypage{}
+  
+  </style>
+</head>
+<body>
+  <div class="inner">
+    <div class="top_nav_box" id="top_nav_box">
+      <div class="top_logo">로고</div>
+      <div class="top_category">카테고리</div>
+      <div class="top_mypage">마이페이지</div>
+    </div>
+    <!-- //#top_nav_box -->
+  </div>
+  <!-- //.inner -->
+</body>
+</html>

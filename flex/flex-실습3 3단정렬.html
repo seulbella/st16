@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex-3단정렬 (양끝+가운데)</title>
+  <link rel="stylesheet" href="../reset.css">
+ <!-- 
+    1. flex 선언 container
+    2. flex의 방향을 결정 container (row 기본값)
+    3. 아이템의 축소/확장을 결정 item (shrink:0 grow(확장):x 기본값)
+    4. 아이템의 크기 결정 item (flex-basis > width, height)
+    ㄴ 주축의 크기 flex-basis:auto; 기본값 -> width, height 지정값 우선
+    ㄴ 반대로, basis 값을 지정할 경우 flex-basis가 최우선
+    ㄴ width: calc(아이템크기% - (여백 * (단 - 1) / 단))
+    5. 아이템의 줄바꿈을 결정 container
+    6. 여백관리 gap->container margin->item
+    7. 정렬 container / item, margin
+    ㄴ주축정렬 / 교차축정렬 container
+    ㄴ
+
+        /* 기본값 설정 상태 */
+        /* flex-container */
+    /* 2 방향 */
+    /* flex-direction: row; */
+    /* 5 줄바꿈 */
+    /* flex-wrap: nowrap; */
+    /* 6 여백 */
+    /* gap: 0; */
+    /* 7 정렬 */
+    /* 주축 justify-content: flex-start; */
+    /* 교차축 align-content : stretch; */
+
+      /* item */
+    /* 3 */
+    /* flex-grow: 0; */
+    /* flex-shrink: 1; */
+    /* flex-basis: auto; */
+    /* 4 */
+    /* width: auto; */
+    /* height: auto; */
+  -->
+  <style>
+    /* 모양 */
+   .inner{background-color: #ccc;}
+   #top_nav_box{background-color: #fcc; box-sizing: border-box;}
+   #top_nav_box>div{box-sizing: border-box; padding: 0.5rem;}
+   #top_nav_box .top_logo{background-color: beige;}
+   #top_nav_box .top_category{background-color: dodgerblue;}
+   #top_nav_box .top_mypage{background-color: purple;}
+   
+   /* 크기 */
+   /* #top_nav_box .top_logo{width: 100px;}
+   #top_nav_box .top_category{min-width: 600px; max-width: 700px;}
+   #top_nav_box .top_mypage{width: 150px;}  */
+   
+   /* flex 학습용 */
+   .inner{
+    display: flex;
+   }
+   #top_nav_box{
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+   }
+   #top_nav_box > div{
+    /* flex-basis: auto; */
+   }
+   #top_nav_box .top_logo{width: 100px;}
+   #top_nav_box .top_category{min-width: 600px; max-width: 700px;}
+   #top_nav_box .top_mypage{width: 150px;}
+  
+  </style>
+</head>
+<body>
+  <div class="inner">
+    <div class="top_nav_box" id="top_nav_box">
+      <div class="top_logo">로고</div>
+      <div class="top_category">카테고리</div>
+      <div class="top_mypage">마이페이지</div>
+    </div>
+    <!-- //#top_nav_box -->
+  </div>
+  <!-- //.inner -->
+</body>
+</html>
