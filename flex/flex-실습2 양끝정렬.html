@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>flex-연습기본</title>
+  <title>flex 실습2 - 양끝정렬</title>
   <link rel="stylesheet" href="../reset.css">
- <!-- 
+    <!-- 
     1. flex 선언 container
     2. flex의 방향을 결정 container (row 기본값)
     3. 아이템의 축소/확장을 결정 item (shrink:0 grow(확장):x 기본값)
@@ -16,8 +16,6 @@
     5. 아이템의 줄바꿈을 결정 container
     6. 여백관리 gap->container margin->item
     7. 정렬 container / item, margin
-    ㄴ주축정렬 / 교차축정렬 container
-    ㄴ
 
         /* 기본값 설정 상태 */
         /* flex-container */
@@ -55,8 +53,24 @@
    #top_nav_box .top_mypage{width: 150px;}  */
    
    /* flex 학습용 */
-   .inner{}
-   #top_nav_box{}
+   .inner{
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+    }
+
+   #top_nav_box{
+    width: 100%;
+    display: flex;
+    /* flex-wrap: nowrap; */
+    justify-content: space-between;
+    
+  }
+   #top_nav_box > div{
+    /* flex-grow: 0; */
+    /* flex-shrink: 1; */
+    /* flex-basis: auto; */
+   }
    #top_nav_box .top_logo{}
    #top_nav_box .top_category{}
    #top_nav_box .top_mypage{}
@@ -67,7 +81,6 @@
   <div class="inner">
     <div class="top_nav_box" id="top_nav_box">
       <div class="top_logo">로고</div>
-      <div class="top_category">카테고리</div>
       <div class="top_mypage">마이페이지</div>
     </div>
     <!-- //#top_nav_box -->

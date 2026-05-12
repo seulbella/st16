@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>flex-연습기본</title>
+  <title>flex5 margin auto의 활용</title>
   <link rel="stylesheet" href="../reset.css">
  <!-- 
     1. flex 선언 container
@@ -55,11 +55,23 @@
    #top_nav_box .top_mypage{width: 150px;}  */
    
    /* flex 학습용 */
-   .inner{}
-   #top_nav_box{}
-   #top_nav_box .top_logo{}
-   #top_nav_box .top_category{}
-   #top_nav_box .top_mypage{}
+   .inner{
+    display: flex;
+   }
+   #top_nav_box{
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-start;
+   }
+   #top_nav_box > div{
+    /* flex-basis: auto; */
+   }
+   #top_nav_box .top_logo{width: 100px;}
+   #top_nav_box .top_category{min-width: 600px; max-width: 700px;}
+   /* justify-content:flex-start하고 플렉스 컨테이너의 남은 공간을 
+   .top_mypage의 왼쪽 바깥 여백으로 사용한다. */
+   #top_nav_box .top_mypage{width: 150px; margin-left: auto;}
   
   </style>
 </head>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex에서 margin활용</title>
+  <link rel="stylesheet" href="../reset.css">
+  <style>
+    .container{
+      background-color: #ccc;
+      width: 100%; 
+      height: 100vh;
+      display: flex;
+      justify-content: flex-start;
+
+    }
+    .item{
+      /* width: 100px; height: 100px; */
+      background-color: magenta;
+      /* margin: auto; */
+      width: 100px;
+      /* flex item이 stretch일 경우 부모의 크기만큼 늘어나라를 제외하고는
+      내용의 크기 height:auto */
+      height: 100px;
+      /* margin-top: auto; */
+      /* 플렉스 컨테이너의 남은 공간을 바깥여백으로 사용한다. */
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item">item</div>
+  </div>
+</body>
+</html>

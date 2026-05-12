@@ -50,16 +50,27 @@
    #top_nav_box .top_mypage{background-color: purple;}
    
    /* 크기 */
-   /* #top_nav_box .top_logo{width: 100px;}
+   #top_nav_box .top_logo{width: 100px;}
    #top_nav_box .top_category{min-width: 600px; max-width: 700px;}
-   #top_nav_box .top_mypage{width: 150px;}  */
+   #top_nav_box .top_mypage{width: 150px;} 
    
    /* flex 학습용 */
    .inner{}
-   #top_nav_box{}
+   #top_nav_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    text-align: center;
+   }
    #top_nav_box .top_logo{}
    #top_nav_box .top_category{}
-   #top_nav_box .top_mypage{}
+   #top_nav_box .top_mypage{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+   }
   
   </style>
 </head>

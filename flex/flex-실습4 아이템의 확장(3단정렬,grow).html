@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>flex-연습기본</title>
+  <title>flex-아이템의 확장</title>
   <link rel="stylesheet" href="../reset.css">
  <!-- 
     1. flex 선언 container
@@ -55,11 +55,24 @@
    #top_nav_box .top_mypage{width: 150px;}  */
    
    /* flex 학습용 */
-   .inner{}
-   #top_nav_box{}
-   #top_nav_box .top_logo{}
-   #top_nav_box .top_category{}
-   #top_nav_box .top_mypage{}
+   .inner{
+    display: flex;
+   }
+   #top_nav_box{
+    width: 100%;
+
+    display: flex;
+    gap: 40px;
+    /* justify-content: space-between; */
+   }
+   #top_nav_box > div{
+    /* flex-basis: auto; */
+   }
+   #top_nav_box .top_logo{width: 100px;}
+   #top_nav_box .top_category{
+    flex-grow: 1;
+  }
+   #top_nav_box .top_mypage{width: 150px;}
   
   </style>
 </head>
