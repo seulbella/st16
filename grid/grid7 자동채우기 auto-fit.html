@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>grid 미리보기</title>
+  <title>@media 없이 반응형으로 작성-auto-fit (auto-fit/auto-fill) </title>
   <link rel="stylesheet" href="../reset.css">
   <style>
     /* 
@@ -45,11 +45,29 @@
 
     /* grid */
     .grid-container{
+      /* 1 grid 선언 */
       display: grid;
+      /* 2 행열갯수 크기 */
+      /* repeat(반복횟수, 크기) */
+      /* repeat(자동채우기예약어, 크기) 
+      자동채우기예약어
+      ㄴ 조건 : 빈아이템(빈트랙)이 있을 때, 지정된 크기로 반복적으로 배치한 후 컨테이너에 남은 공간이 있을 때 처리하는 방법에 있다.
+      (1) auto-fill : 빈 트랙도 암시적 선언으로 채워줌
+      (2) auto-fit : 빈 트랙은 없앰 (반응형 미디어 구현할 때 많이 사용)**
+      */
+      grid-template-columns: repeat(auto-fill, 100px);
+      grid-template-columns: repeat(auto-fit, 100px);
+      grid-template-columns: repeat(auto-fill, minmax(100px, auto));
+      /* 모바일 최소 크기 320px 유지 */
+      grid-template-columns: repeat(auto-fit, minmax(320px, auto));
+      /* 3,4 는 기본값으로 설정 */
+      /* 5 */
+      gap: 20px 20px;
     }
 
     /* grid item */
     .grid-container .item{
+      aspect-ratio: 1;
     }
     .grid-container .item:nth-child(1){
 
@@ -70,6 +88,7 @@
 </head>
 <body>
   <div class="wrap">
+    <h1>@media 없이 반응형으로 작성-auto-fit</h1>
     <div class="grid-container">
       <div class="item">아이템1</div>
       <div class="item">아이템2</div>

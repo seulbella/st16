@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>grid 미리보기</title>
+  <title>grid3 행열의 크기지정 키워드 (fr, minmax, fit-content) </title>
   <link rel="stylesheet" href="../reset.css">
   <style>
     /* 
@@ -35,17 +35,34 @@
     .wrap{
       margin: 50px;
     }
-
     .grid-container{
       background-color: #ccc;
     }
     .grid-container .item{
       background-color: dodgerblue;
+      border: 1px solid magenta;
+      box-sizing: border-box;
     }
 
     /* grid */
     .grid-container{
       display: grid;
+      grid-template-rows: repeat(3, 100px);
+      /* 크기 auto : 컨테이너에 남은 공간 */
+      grid-template-columns: 100px auto 2rem;
+      /* fr */
+      grid-template-columns: 3fr 3fr 3fr 3fr;
+      grid-template-columns: repeat(4, 3fr);
+      /* minmax(최소값, 최대값)
+      최소값 fr단위를 사용하지 못합니다.
+       */
+       grid-template-columns: repeat(4, minmax(150px, 1fr));
+       grid-template-columns: repeat(3, minmax(150px, 33.33%));
+      
+      /* fit-content(최대크기) 
+         아이템의 내용이 최대크기보다 크지 않을 경우 content(내용)에 맞춰주고(fit), 내용이 제한된 최대크기보다 커질때는 최대크기만 유지해준다. */
+      /* 300px 보다 아이템 내용이 작을 경우 내용크기, 아니면 300px이상은 커지지 말아라. */
+      grid-template-columns: repeat(3, fit-content(300px));
     }
 
     /* grid item */
@@ -71,8 +88,8 @@
 <body>
   <div class="wrap">
     <div class="grid-container">
-      <div class="item">아이템1</div>
-      <div class="item">아이템2</div>
+      <div class="item">Lorem ipsum dolor sit.</div>
+      <div class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, maxime.</div>
       <div class="item">아이템3</div>
       <div class="item">아이템4</div>
       <div class="item">아이템5</div>

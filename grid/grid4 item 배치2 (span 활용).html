@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>grid 미리보기</title>
+  <title>grid4 item 배치2</title>
   <link rel="stylesheet" href="../reset.css">
   <style>
     /* 
@@ -41,30 +41,41 @@
     }
     .grid-container .item{
       background-color: dodgerblue;
+      box-sizing: border-box;
+      border: 4px solid magenta;
     }
 
     /* grid */
     .grid-container{
       display: grid;
+      grid-template-rows: repeat(3, 100px);
+      grid-template-columns: repeat(4, 1fr);
     }
 
     /* grid item */
+    /* grid가 지정된 container의 직계자손만이 grid item이 된다. */
     .grid-container .item{
     }
     .grid-container .item:nth-child(1){
-
+      grid-column: 1/5;
+      grid-column: 1/-1;
+      grid-column: 1/span 4;
     }
     .grid-container .item:nth-child(2){
+      grid-column: 1/3;
+      grid-column: 1/span 2;
 
     }
     .grid-container .item:nth-child(3){
-
+      grid-column: 1/3;
     }
     .grid-container .item:nth-child(4){
-
+      grid-column: 3/4;
+      grid-row: 2/4;
     }
     .grid-container .item:nth-child(5){
-
+      grid-column: 4/5;
+      grid-row: 2/4;
     }
   </style>
 </head>
@@ -76,9 +87,6 @@
       <div class="item">아이템3</div>
       <div class="item">아이템4</div>
       <div class="item">아이템5</div>
-      <div class="item">아이템6</div>
-      <div class="item">아이템7</div>
-      <div class="item">아이템8</div>
     </div>
   </div>
 </body>

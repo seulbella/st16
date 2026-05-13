@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>grid 미리보기</title>
+  <title>grid5 정렬과 배치</title>
   <link rel="stylesheet" href="../reset.css">
   <style>
     /* 
@@ -38,21 +38,49 @@
 
     .grid-container{
       background-color: #ccc;
+      min-height: 500px;
     }
     .grid-container .item{
       background-color: dodgerblue;
+      box-sizing: border-box;
+      border: 1px solid magenta;
     }
 
     /* grid */
     .grid-container{
       display: grid;
+      /* 정렬을 위해 item의 합이 container보다 작게 지정 */
+      /* grid-template-rows: repeat(3, 100px); */
+      grid-template-columns: repeat(3, 30%);
+      /* 컨테이너 안에서 아이템의 정렬과 배치 */
+      /* 수평정렬 start center end */
+      justify-content: start;
+      /* 수평배치 양끝정렬 s-b s-a s-e */
+      justify-content: space-evenly;
+      /* 정렬/배치 기본값 */
+      justify-content: normal;
+      /* block축의 크기를 지정하지 않으면 stretch 처리됨 */
+      align-content: normal;
+      /* block축의 크기를 지정하면 start */
+      grid-template-rows: repeat(3, 100px);
+      align-content: end;
+
+      /* 여백 gap(container), margin(item) 
+      justify-, align- 값이 between-* 으로 되어 있으면 gap 설정 무시
+      */
+
+      /* -items 그리드 영역 안에서 정렬 */
+      justify-items: center;
+      align-items: center;
     }
 
     /* grid item */
     .grid-container .item{
+      
     }
     .grid-container .item:nth-child(1){
-
+      justify-self: start;
+      align-self: start;
     }
     .grid-container .item:nth-child(2){
 
