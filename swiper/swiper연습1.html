@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>swiper기본</title>
+  <link rel="stylesheet" href="../reset.css">
+  <!-- swiper.css 링크 불러오기 -->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+  />
+
+  <!-- swiper.js 스크립트 설치 -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <style>
+    /* visual-section은 브라우저의 너비를 모두 사용할 것입니다.  */
+    /* cafe24가 사용하는 클래스명 동일하게 사용
+    메인화면에서 브라우저 전체를 사용할 때는 section 요소에 .section_full 추가 */
+    .section_full{
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
+    .visual-section{
+      background-color: #f00;
+    }
+
+    /* swiper는 작업 시 따로 조상을 감싸서 디자인 작업을 하는게 기존에 정의된 .js 파일과 클래스명을 건들이지 않고 작업하기가 좋다. */
+    .visual-section .swiper-slide .silde-img-source{}
+    .visual-section .swiper-slide .silde-img-source a{
+      display: block;
+    }
+    .visual-section .swiper-slide .silde-img-source a img{
+      display: block;
+      width: 100%;
+    }
+
+    /* swiper.js 수정 */
+    .swiper {
+      width: 100%;
+    }
+    .visual-section .swiper .swiper-pagination-bullet{
+      /* background: transparent; */
+      background: #fff;
+      /* 원 */
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      /* 사각형 */
+      width: 14px; height: 4px;
+      border-radius: 0;
+      background: #fff;
+      /* 색옵션 */
+      opacity: 0.4;
+      margin-right: 1rem;
+      border: 2px solid #fff;
+    }
+
+    .visual-section .swiper .swiper-pagination-bullet-active{
+      opacity: 1;
+      /* background-color: #8f8; */
+      background-color: #fff;
+      /* 사각형 */
+      width: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="visual-section section_full section">
+    <!-- Slider main container -->
+    <div class="swiper swiper1">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+            <div class="slide-img-source">
+              <a href="">
+                <img src="images/slide1.png" alt="배너의 설명을 작성해주세요.">
+              </a>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="slide-img-source">
+              <a href="">
+                <img src="images/slide2.png" alt="배너의 설명을 작성해주세요.">
+              </a>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="slide-img-source">
+              <a href="">
+                <img src="images/slide3.png" alt="배너의 설명을 작성해주세요.">
+              </a>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="slide-img-source">
+              <a href="">
+                <img src="images/slide4.png" alt="배너의 설명을 작성해주세요.">
+              </a>
+            </div>
+        </div>
+        ...
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar"></div>
+    </div>
+  </div>
+
+<!-- swiper.js를 실행하기 위한 구문 -->
+<!-- const swiper = new Swiper('.swiper', {
+
+const swiper1의 swiper1은 해당 페이지 내에서 유일한 이름이어야 합니다.
+Swiper('.swiper1'은 문서 내에 요소가 존재하며 클래스명은 대소문자를 구분합니다.
+-->
+<script>
+  const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable :true,
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  });
+</script>
+</body>
+</html>
