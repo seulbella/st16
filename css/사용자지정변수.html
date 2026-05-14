@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>사용자 지정속성(변수)</title>
+  <link rel="stylesheet" href="../reset.css">
+  <style>
+    /*
+
+      object {
+        속성 : 값;
+        속성 : 값;
+      }
+
+      선택자 {
+        --변수명 : 값;
+        --변수명 : 값;
+      }
+
+      -> css 스타일시트에 선언한 변수 불러올때
+      선택자 {
+        속성 : var(변수명);
+        속성 : var(변수명);
+      }
+
+    */
+    :root{
+      --primary-color:#f89696;
+      --section-title-color: var(--primary-color);
+      --gray1:#ccc;
+      --text-color:#000;
+      --text-color-point:var(--primary-color);
+    }
+    .card{border: 1px solid var(--gray1);}
+    .t1{
+      background: var(--primary-color);
+    }
+    .t2,.t3{
+      color: var(--text-color);
+    }
+    .t4{
+      color: var(--text-color-point);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card t1">card</div>
+    <div class="card t2">card</div>
+    <div class="card t3">card</div>
+    <div class="card t4">card</div>
+  </div>
+</body>
+</html>
