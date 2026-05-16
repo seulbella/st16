@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>swiper기본</title>
+  <title>Pagination progress</title>
   <link rel="stylesheet" href="../reset.css">
   <!-- swiper.css 링크 불러오기 -->
   <link
@@ -38,7 +38,8 @@
     <div class="swiper-button-next"></div>
 
     <!-- If we need scrollbar -->
-    <div class="swiper-scrollbar"></div>
+    <!-- 만약 pagination을 progressbar로 할 경우, 스크롤에 해당되는 요소는 제거 -->
+    <!-- <div class="swiper-scrollbar"></div> -->
   </div>
 
 <!-- swiper.js를 실행하기 위한 구문 -->
@@ -56,6 +57,7 @@ Swiper('.swiper1'은 문서 내에 요소가 존재하며 클래스명은 대소
     // If we need pagination
     pagination: {
       el: '.swiper-pagination',
+      type: 'progressbar',
       clickable :true,
     },
 
@@ -66,9 +68,9 @@ Swiper('.swiper1'은 문서 내에 요소가 존재하며 클래스명은 대소
     },
 
     // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
+    // scrollbar: {
+    //   el: '.swiper-scrollbar',
+    // },
   });
 </script>
 </body>
