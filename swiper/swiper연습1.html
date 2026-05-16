@@ -27,19 +27,30 @@
     }
 
     /* swiper는 작업 시 따로 조상을 감싸서 디자인 작업을 하는게 기존에 정의된 .js 파일과 클래스명을 건들이지 않고 작업하기가 좋다. */
-    .visual-section .swiper-slide .silde-img-source{}
-    .visual-section .swiper-slide .silde-img-source a{
+    .visual-section .swiper-slide{
+    }
+    .visual-section .swiper-slide a{
       display: block;
     }
-    .visual-section .swiper-slide .silde-img-source a img{
+    .visual-section .swiper-slide a img{
       display: block;
       width: 100%;
     }
 
     /* swiper.js 수정 */
-    .swiper {
+    .visual-section .swiper {
       width: 100%;
     }
+
+    /* 페이지네이션 */
+    .visual-section .swiper-horizontal>.swiper-pagination-bullets, 
+    .visual-section .swiper-pagination-bullets .swiper-pagination-horizontal, 
+    .visual-section .swiper-pagination-custom, 
+    .visual-section .swiper-pagination-fraction{
+      bottom: 24px;
+    }
+
+
     .visual-section .swiper .swiper-pagination-bullet{
       /* background: transparent; */
       background: #fff;
@@ -63,6 +74,38 @@
       /* 사각형 */
       width: 24px;
     }
+
+    /* 슬라이드 좌우 버튼 */
+    .visual-section .swiper-button-next, 
+    .visual-section .swiper-button-prev{
+      color: #fff;
+      box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+      padding: 1rem 0.5rem;
+      opacity: 0.5;
+      /* 버튼을 수직으로 정가운데로 배치 */
+      transform: translate(0, -50%);
+    }
+
+    /* opacity 애니메이션 */
+    .visual-section .swiper-button-next:hover, 
+    .visual-section .swiper-button-prev:hover{
+      opacity: 1;
+    }
+
+    .visual-section .swiper-button-prev{
+      left: 50px;
+      right: auto;
+    }
+    .visual-section .swiper-button-next{
+      right: 50px;
+      left: auto;
+    }
+
+    /* 맨 하단 스크롤바 */
+    .visual-section .swiper-scrollbar.swiper-scrollbar-horizontal{
+      bottom: 0px;
+    }
+
   </style>
 </head>
 <body>
@@ -73,34 +116,25 @@
       <div class="swiper-wrapper">
         <!-- Slides -->
         <div class="swiper-slide">
-            <div class="slide-img-source">
               <a href="">
                 <img src="images/slide1.png" alt="배너의 설명을 작성해주세요.">
               </a>
-            </div>
         </div>
         <div class="swiper-slide">
-            <div class="slide-img-source">
               <a href="">
                 <img src="images/slide2.png" alt="배너의 설명을 작성해주세요.">
               </a>
-            </div>
         </div>
         <div class="swiper-slide">
-            <div class="slide-img-source">
               <a href="">
                 <img src="images/slide3.png" alt="배너의 설명을 작성해주세요.">
               </a>
-            </div>
         </div>
         <div class="swiper-slide">
-            <div class="slide-img-source">
               <a href="">
                 <img src="images/slide4.png" alt="배너의 설명을 작성해주세요.">
               </a>
-            </div>
         </div>
-        ...
       </div>
       <!-- If we need pagination -->
       <div class="swiper-pagination"></div>
@@ -123,6 +157,12 @@ Swiper('.swiper1'은 문서 내에 요소가 존재하며 클래스명은 대소
     // Optional parameters
     direction: 'horizontal',
     loop: true,
+
+    //autoplay
+    // autoplay: {
+    // delay: 500,
+    // disableOnInteraction: false,
+    // },
 
     // If we need pagination
     pagination: {

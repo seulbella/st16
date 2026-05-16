@@ -34,8 +34,12 @@
     <div class="swiper-pagination"></div>
 
     <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev">
+      <img src="images/arrow_back_ios_48dp.png" alt="">
+    </div>
+    <div class="swiper-button-next">
+      <img src="images/arrow_forward_ios_48dp.png" alt="">
+    </div>
 
     <!-- If we need scrollbar -->
     <div class="swiper-scrollbar"></div>
@@ -48,7 +52,7 @@ const swiper1의 swiper1은 해당 페이지 내에서 유일한 이름이어야
 Swiper('.swiper1'은 문서 내에 요소가 존재하며 클래스명은 대소문자를 구분합니다.
 -->
 <script>
-  const swiper = new Swiper('.swiper', {
+  const swiper = new Swiper('.swiper1', {
     // Optional parameters
     direction: 'horizontal',
     loop: true,
@@ -63,6 +67,8 @@ Swiper('.swiper1'은 문서 내에 요소가 존재하며 클래스명은 대소
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
+      // 내가 이미지를 넣을 때
+      addIcons:false,
     },
 
     // And if we need scrollbar
