@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagination progress</title>
+  <link rel="stylesheet" href="../reset.css">
+  <!-- swiper.css 링크 불러오기 -->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+  />
+
+  <!-- swiper.js 스크립트 설치 -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <style>
+    .swiper {
+      width: 80%;
+      height: 50vh;
+    }
+  </style>
+</head>
+<body>
+  <!-- Slider main container -->
+  <div class="swiper swiper1">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- If we need scrollbar -->
+    <!-- 만약 pagination을 progressbar로 할 경우, 스크롤에 해당되는 요소는 제거 -->
+    <!-- <div class="swiper-scrollbar"></div> -->
+  </div>
+
+<!-- swiper.js를 실행하기 위한 구문 -->
+<!-- const swiper = new Swiper('.swiper', {
+
+const swiper1의 swiper1은 해당 페이지 내에서 유일한 이름이어야 합니다.
+Swiper('.swiper1'은 문서 내에 요소가 존재하며 클래스명은 대소문자를 구분합니다.
+-->
+<script>
+  const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'progressbar',
+      clickable :true,
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    // And if we need scrollbar
+    // scrollbar: {
+    //   el: '.swiper-scrollbar',
+    // },
+  });
+</script>
+</body>
+</html>
