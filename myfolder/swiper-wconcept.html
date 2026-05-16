@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>swiper - w concept</title>
+  <link rel="stylesheet" href="../reset.css">
+  <!-- swiper.css 링크 불러오기 -->
+  <link
+  rel="stylesheet"
+  href="css/swiper.min.css"
+  />
+  <!-- 특정 개념
+  - inline-block, float : 본인 요소에게 속성 선언
+  - flex, grid : 부모에게 선언 / 자식에게 영향
+  -->
+
+  <!-- swiper.js 스크립트 설치 -->
+  <script src="js/swiper-bundle.min.js"></script>
+  <style>
+    .visual-section{
+      /* .visual-section 과 후손에서 사용될 변수 선언 (9. 문제로 인해) */
+      --swiper-control-position-bottom:-40px;
+      width: 100% !important; /* (2-1) 해결 */
+      max-width: 100% !important; /* (2-1) 해결 */
+      overflow: hidden; /* 6. 문제 해결 */
+      /* (8-2) 해결 : 자식높이(.swiper)+50px */
+      padding-bottom: 50px;
+    }
+
+    .visual-section .swiper{
+      overflow: visible; /* (1-1) 해결 */
+      width: 1420px; /* (2-2) 해결 */
+      max-width: 92%; /* (2-2) 해결 */
+
+      /* cafe24 swiper css버전 */
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .visual-section .swiper .swiper-wrapper{
+      /* 5. 해결 */
+      /* gap: 20px; */
+      /* (5-1) swiper 작동을 위해서는 gap이 아닌 space-between 속성을 지정 */
+      /* swiper script 참조 */
+    }
+
+    .visual-section .swiper-slide{
+      width: auto; /* (1-2) 해결 */
+      /* 3. 해결 : swiper script 내의 slidesPerView로 해결하기 */
+      /* width: 33.33%; */
+    }
+
+    .visual-section .swiper-slide > a{
+      /* 4. 해결 */
+      display: block;
+    }
+    .visual-section .swiper-slide > a > img{
+      /* 4. 해결 */
+      display: block;
+      width: 100%; /* img 고유의 특성 때문에 자기 크기로만 가려는 속성이 있어서 부모 크기를 따르도록 지정해줘야 함 */
+    }
+
+    /* progressbar */
+    .visual-section .swiper-pagination-progressbar{
+      /* height: var(--swiper-pagination-progressbar-size, 4px); */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* (8-1) 문제 해결 */
+      /* bottom: -40px; */
+      /* 9. 문제 해결 (prev, next 버튼과 위치 동일하게 하기 위함) */
+      bottom: var(--swiper-control-position-bottom);
+      top: auto; /* bottom을 주기 위해 top을 무력화 하는 법 auto*/
+      /* (9-1) 해결 */
+      width: calc(100% - 120px);
+    }
+
+    .visual-section .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+      background-color: #000;
+    } 
+
+    /* 9. 해결 */
+    .visual-section .swiper-button{
+      position: absolute;
+      right: 0px;
+      bottom: var(--swiper-control-position-bottom);
+      /* y축 크기의 80%만큼 아래로 (transform은 기존 수학적 지식과 다르게 -,+ 방향 거꾸로) */
+      transform: translate(0, 50%);
+    }
+    .visual-section .swiper-button>div{
+      /* position:absolute 무력화 : 기존에 설정된 top, bottom, right, left postion 값을 무력화시킨다는 뜻 */
+      position: static;
+      /* 수평으로 오면서 너비 높이를 지정하고 싶다. */
+      display: inline-block;
+      width: 24px; height: 24px;
+      /* .swiper-button 사이의 | 를 넣기 위함 */
+      position: relative;
+      /* 이상해진 위치 기본값 복원 */
+      left: auto; right: auto; top: auto; bottom: auto;
+    }
+    .visual-section .swiper-button .swiper-button-prev,
+    .visual-section .swiper-button .swiper-button-next{
+      /* width: 24px; height: 24px; */
+      padding-left: 10px;
+      padding-right: 10px;
+      background-image: none;
+    }
+
+    .visual-section .swiper-button .swiper-button-prev::after{
+      content: "";
+      display: block;
+      width: 2px;
+      height: 60%;
+      background:#ccc;
+      position:absolute;
+      right: 0;
+      /* '|' 아이콘을 기준 선에서 1차적으로 top: 50% 위치, 요소가 기준선에서 아래 위치해있으니까 transform으로 한번더 위로 올려줌! */
+      top: 50%;
+      transform: translate(0,-50%);
+    }
+    .visual-section .swiper-button .swiper-button-prev > img,
+    .visual-section .swiper-button .swiper-button-next > img{
+      width: 100%;
+      display: block;
+    }
+
+    /* .visual-section .swiper-button .swiper-button-next > img를 180도 회전시킴 (기존의 prev 원본이 아이콘 위치가 살짝 왼쪽으로 치우쳐져 있어서 정가운데 잘 배치되어 있는 next 버튼을 활용해 회전시켜 균형을 잡음 */
+    .visual-section .swiper-button .swiper-button-next > img{
+      transform: rotate(180deg);
+    }
+
+    .visual-section .swiper-button .swiper-button-play-toggle{}
+    .visual-section .swiper-button .swiper-button-play-toggle>span{
+      display: block;
+      padding-left: 100%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      overflow: hidden;
+    }
+    .visual-section .swiper-button .swiper-button-play-toggle .icon-pause{
+      background-image: url(images/pause_48dp.png);
+      background-repeat: no-repeat;
+    }
+    .visual-section .swiper-button .swiper-button-play-toggle .icon-play{
+      background-image: url(images/play_arrow_48dp.png);
+      background-repeat: no-repeat;
+    }
+    
+    /* 
+    .swiper-button-play-toggle.is-play : pause표시
+    .swiper-button-play-toggle.is-pause : play 표시
+    */
+    .visual-section .swiper-button .swiper-button-play-toggle.is-pause .icon-pause,
+    .visual-section .swiper-button .swiper-button-play-toggle.is-play .icon-play{
+      display: none;
+    }
+
+    /* 슬라이드 위치를 확인하기 위한 임시 span 태그 (삭제예정) */
+    .visual-section .swiper-slide{
+      position: relative; /* swiper 이미 설정 */
+    }
+    .visual-section .swiper-slide span{
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: #fff;
+    }
+    /* 위 슬라이드의 위치를 확인 테스트 후 삭제 */
+
+
+  </style>
+</head>
+<body>
+  <!-- Slider main container -->
+  <div class="section visual-section">
+    <div class="swiper swiper1">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <a href="">
+            <img src="https://picsum.photos/400/500?random=1">
+            <span>1번 슬라이드</span>
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="">
+            <img src="https://picsum.photos/400/500?random=2">
+            <span>2번 슬라이드</span>
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="">
+            <img src="https://picsum.photos/400/500?random=3">
+            <span>3번 슬라이드</span>
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="">
+            <img src="https://picsum.photos/400/500?random=4">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="">
+            <img src="https://picsum.photos/400/500?random=5">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="">
+            <img src="https://picsum.photos/400/500?random=6">
+          </a>
+        </div>
+      </div> <!-- swiper-wrapper -->
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- (9-2-1) 컨트롤 버튼의 위치를 편리하게 잡기 위해서 -->
+      <div class="swiper-button">
+        <!-- If we need navigation buttons -->
+        <!-- 내가 지정한 이미지로 버튼 아이콘 변경** -->
+        <div class="swiper-button-prev">
+          <img src="images/arrow_back_ios_48dp.png" alt="이전 슬라이드로 이동">
+        </div>
+        <div class="swiper-button-next">
+          <img src="images/arrow_back_ios_48dp.png" alt="다음 슬라이드로 이동">
+        </div>
+        <!-- play와 pause 버튼이 올 예정 -->
+        <div class="swiper-button-play-toggle is-play">
+          <span id="icon-pause" class="icon-pause">pause</span>
+          <span id="icon-play" class="icon-play">play</span>
+        </div>
+      </div> <!-- //.swiper-button -->
+
+      <!-- If we need scrollbar -->
+      <!-- progressbar로 변경했기 때문에 scrollbar 삭제 -->
+      <!-- <div class="swiper-scrollbar"></div> -->
+    </div> <!-- swiper swiper1 -->
+  </div> <!-- visual-section, section -->
+
+<!-- swiper.js를 실행하기 위한 구문 -->
+<!-- const swiper = new Swiper('.swiper', {
+
+const swiper1의 swiper1은 해당 페이지 내에서 유일한 이름이어야 합니다.
+Swiper('.swiper1'은 문서 내에 요소가 존재하며 클래스명은 대소문자를 구분합니다.
+-->
+<!-- myscript.js: Swiper 초기화와 재생/정지 토글 기능을 외부로 분리 -->
+<script src="/myfolder/js/myscript.js" defer></script>
+</body>
+</html>
