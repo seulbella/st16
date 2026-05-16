@@ -258,6 +258,12 @@ Swiper('.swiper1'은 문서 내에 요소가 존재하며 클래스명은 대소
     slidesPerView: 3, // 문제 3. 해결 (3, 4, 5단..)
     spaceBetween: 20, // (5-1) 해결 (여백)
 
+    // 자동 재생 설정
+    autoplay: {
+      delay: 1000,
+      disableOnInteraction: false,
+    },
+
     // If we need pagination
     pagination: {
       el: '.swiper-pagination',
@@ -282,6 +288,27 @@ Swiper('.swiper1'은 문서 내에 요소가 존재하며 클래스명은 대소
     //   el: '.swiper-scrollbar',
     // },
   });
+
+  function initPlayToggle(swiperInstance) {
+    const playToggle = document.querySelector('.swiper-button-play-toggle');
+    if (!playToggle) return;
+
+    playToggle.addEventListener('click', () => {
+      const isPlaying = playToggle.classList.contains('is-play');
+
+      if (isPlaying) {
+        swiperInstance.autoplay.stop();
+        playToggle.classList.remove('is-play');
+        playToggle.classList.add('is-pause');
+      } else {
+        swiperInstance.autoplay.start();
+        playToggle.classList.remove('is-pause');
+        playToggle.classList.add('is-play');
+      }
+    });
+  }
+
+  initPlayToggle(swiper);
 </script>
 </body>
 </html>
