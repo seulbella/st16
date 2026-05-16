@@ -34,11 +34,11 @@ Swiper 슬라이더에 재생/정지 토글 버튼 기능을 추가한다.
 Swiper 슬라이더 HTML 파일의 인라인 JavaScript를 외부 파일로 분리한다.
 
 [대상 파일]
-- 입력: swiper연습2-wconcept.html
-- 출력: myscript.js
+- 입력: swiper-wconcept.html
+- 출력: /myfolder/js/myscript.js
 
 [조건]
-1. JS 코드를 myscript.js로 분리하고, HTML에서 <script src="myscript.js" defer></script>로 참조한다.
+1. JS 코드를 myscript.js로 분리하고, HTML에서 <script src="/myfolder/myscript.js" defer></script>로 참조한다.
 2. jQuery에 의존하지 않는 순수 JavaScript(vanilla JS)로 작성한다.
 3. myscript.js 각 코드 블록에 목적과 동작을 설명하는 주석을 추가한다.
    HTML의 스크립트 참조 부분에도 간단한 주석을 단다.
