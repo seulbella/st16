@@ -1,0 +1,72 @@
+/** subpage_theme04 (button_color - Roman Coffee),(Webfont - Noto Sans KR) **/
+.theme04,
+.theme04 input,
+.theme04 select,
+.theme04 textarea,
+.theme04 code,
+.theme04 button {font-family:"Poppins", "Noto Sans KR", Arial, sans-serif !important;}
+
+/* 버튼 */
+.theme04 .xans-product-action .action_button .sub_sold,
+.theme04 [class^='btnSubmit'],
+.theme04 a[class^='btnSubmit'] {background:#7b4747;color:#fff;}
+.theme04 [class^='btnNormal']:not(.disabled):hover,
+.theme04 [class^='btnNormal']:not(.disabled).selected {border-color:#7b4747;}
+
+/* 최상단 배너 */
+.theme04 .main_top_banner {background-color:#7b4747;color:#fff;}
+
+/* 상단 메뉴 */
+.theme04 #header .inner .top_nav_box .top_category > ul > li > a:after {background-color:#7b4747;}
+.theme04 #header .inner .top_nav_box .top_category .sub-category li:hover > a {background-color: #bcaaa9;}
+.theme04 #header .inner .top_nav_box .top_category .sub-community > li:hover > a {background-color:#bcaaa9;}
+.theme04 #header .inner .top_nav_box .top_mypage .xans-layout-multishoplist ul li:hover a {background-color: #bcaaa9;}
+
+/* 비디오배너 */
+.theme04 .main_video .background_video {background-color:#bda3a4;}
+
+/* 슬라이드바 */
+.theme04 .swiper-container .swiper-scrollbar .swiper-scrollbar-drag {background:#7b4747;}
+
+/* 상품 할인률 */
+.theme04 .xans-product-detail .infoArea table .sale_box,
+.theme04 .ec-base-product .prdList .thumbnail .sale_box {color:#7b4747;border:1px solid #7b4747;}
+
+/* 상품더보기 */
+.theme04 .more .btnMore:hover {color:#7b4747;background-color:#fff;border:1px solid #7b4747;}
+.theme04 .more .btnMore:hover > div {color:#7b4747;}
+.theme04 .more .btnMore:hover:after {background-color:#7b4747;}
+
+/* 메인 엠디픽 상품진열 */
+.theme04 .main_product_category .main_product_inner .main_product_tab li .button.active {color:#7b4747;}
+.theme04 .main_product_category .main_product_inner .main_product_tab li .button:after {background-color:#7b4747;}
+
+/* 메인 지도 */
+.theme04 .main_map {background-color:#bda3a4;}
+.theme04 .main_map .main_map_banner .main_map_box .main_long_banner_link a {color:#7b4747;background-color:#fff;}
+.theme04 .main_map .main_map_banner .main_map_box .main_long_banner_link a:hover {background-color:#7b4747;color:#fff;}
+.theme04 .main_map .main_map_banner .main_map_box .main_long_banner_link a:hover .icon[class*="icoPlus"]:before,
+.theme04 .main_map .main_map_banner .main_map_box .main_long_banner_link a:hover .icon[class*="icoPlus"]:after {background:#7b4747;}
+
+/* 하단 */
+.theme04 #footer {background:#fff;}
+.theme04 #footer .bt_util {background-color:#7b4747;}
+.theme04 #footer .bt_util ul li a {color:#bcaaa9;}
+.theme04 #footer .inner .bt_right a:hover {color:#7b4747;}
+
+/* 목록페이지 중분류 */
+.theme04 .ec-base-tab.typeMenu li.selected a.button {color:#7b4747;border:1px solid #7b4747;}
+
+/* 상세페이지 탭 */
+.theme04 .detail_tab li{border-bottom:1px solid #7b4747;}
+.theme04 .detail_tab li.tab_open {border:1px solid #7b4747;background-color:#7b4747;border-bottom:1px solid #7b4747;}
+.theme04 .detail_tab li.tab_open span {background-color:#fff;color: #7b4747;}
+.theme04 .detail_tab li.tab_open:first-child{border-left:#7b4747 !important;}
+.theme04 .detail_tab li.tab_open:last-child{border-right:#7b4747 !important;}
+
+/* 상세페이지 모바일 탭 */
+.theme04 .tabProduct li.selected a{background-color:#7b4747;border-top:1px solid #7b4747;}
+.theme04 a[class^='btnSubmit']{background-color:#7b4747 !important;}
+
+/* 상품 추천신상품 뱃지 */
+.theme04 .ec-base-product .prdList .thumbnail .badge {color:#7b4747;}
