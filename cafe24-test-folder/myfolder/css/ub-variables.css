@@ -35,6 +35,9 @@
   --section-bg:#efefef;
   --section-padding-top-bottom:40px;
   --section-main-banner-padding:16px;
+
+  /* border */
+  --border:1px solid #000;
 }
 
   
