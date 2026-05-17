@@ -1,0 +1,78 @@
+
+  <!-- Slider main container -->
+  <div class="section visual-section">
+    <div class="swiper swiper1">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <a href="">
+            <img src="https://picsum.photos/400/500?random=1">
+            <span>1번 슬라이드</span>
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="">
+            <img src="https://picsum.photos/400/500?random=2">
+            <span>2번 슬라이드</span>
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="">
+            <img src="https://picsum.photos/400/500?random=3">
+            <span>3번 슬라이드</span>
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="">
+            <img src="https://picsum.photos/400/500?random=4">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="">
+            <img src="https://picsum.photos/400/500?random=5">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="">
+            <img src="https://picsum.photos/400/500?random=6">
+          </a>
+        </div>
+      </div> <!-- swiper-wrapper -->
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- (9-2-1) 컨트롤 버튼의 위치를 편리하게 잡기 위해서 -->
+      <div class="swiper-button">
+        <!-- If we need navigation buttons -->
+        <!-- 내가 지정한 이미지로 버튼 아이콘 변경** -->
+        <div class="swiper-button-prev">
+          <img src="/myfolder/images/arrow_back_ios_48dp.png" alt="이전 슬라이드로 이동">
+        </div>
+        <div class="swiper-button-next">
+          <img src="/myfolder/images/arrow_back_ios_48dp.png" alt="다음 슬라이드로 이동">
+        </div>
+        <!-- play와 pause 버튼이 올 예정 -->
+        <div class="swiper-button-play-toggle is-play">
+          <span id="icon-pause" class="icon-pause">pause</span>
+          <span id="icon-play" class="icon-play">play</span>
+        </div>
+      </div> <!-- //.swiper-button -->
+
+      <!-- If we need scrollbar -->
+      <!-- progressbar로 변경했기 때문에 scrollbar 삭제 -->
+      <!-- <div class="swiper-scrollbar"></div> -->
+    </div> <!-- swiper swiper1 -->
+  </div> <!-- visual-section, section -->
+
+<!-- swiper.js를 실행하기 위한 구문 -->
+<!-- const swiper = new Swiper('.swiper', {
+
+const swiper1의 swiper1은 해당 페이지 내에서 유일한 이름이어야 합니다.
+Swiper('.swiper1'은 문서 내에 요소가 존재하며 클래스명은 대소문자를 구분합니다.
+-->
+
+<!-- myscript.js: Swiper 초기화와 재생/정지 토글 기능을 외부로 분리 -->
+<!-- @import(url) : cafe24 모듈구문 (외부 자바스크립트 불러오기)  -->
+<!--@css(/myfolder/css/slider.css)-->
+<!--@js(/myfolder/js/myscript.js)-->

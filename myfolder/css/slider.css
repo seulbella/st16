@@ -1,0 +1,151 @@
+
+    .visual-section{
+      /* .visual-section 과 후손에서 사용될 변수 선언 (9. 문제로 인해) */
+      --swiper-control-position-bottom:-40px;
+      width: 100% !important; /* (2-1) 해결 */
+      max-width: 100% !important; /* (2-1) 해결 */
+      overflow: hidden; /* 6. 문제 해결 */
+      /* (8-2) 해결 : 자식높이(.swiper)+50px */
+      padding-bottom: 50px;
+    }
+
+    .visual-section .swiper{
+      overflow: visible; /* (1-1) 해결 */
+      width: 1420px; /* (2-2) 해결 */
+      max-width: 92%; /* (2-2) 해결 */
+
+      /* cafe24 swiper css버전 */
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .visual-section .swiper .swiper-wrapper{
+      /* 5. 해결 */
+      /* gap: 20px; */
+      /* (5-1) swiper 작동을 위해서는 gap이 아닌 space-between 속성을 지정 */
+      /* swiper script 참조 */
+    }
+
+    .visual-section .swiper-slide{
+      width: auto; /* (1-2) 해결 */
+      /* 3. 해결 : swiper script 내의 slidesPerView로 해결하기 */
+      /* width: 33.33%; */
+    }
+
+    .visual-section .swiper-slide > a{
+      /* 4. 해결 */
+      display: block;
+    }
+    .visual-section .swiper-slide > a > img{
+      /* 4. 해결 */
+      display: block;
+      width: 100%; /* img 고유의 특성 때문에 자기 크기로만 가려는 속성이 있어서 부모 크기를 따르도록 지정해줘야 함 */
+    }
+
+    /* progressbar */
+    .visual-section .swiper-pagination-progressbar{
+      /* height: var(--swiper-pagination-progressbar-size, 4px); */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* (8-1) 문제 해결 */
+      /* bottom: -40px; */
+      /* 9. 문제 해결 (prev, next 버튼과 위치 동일하게 하기 위함) */
+      bottom: var(--swiper-control-position-bottom);
+      top: auto; /* bottom을 주기 위해 top을 무력화 하는 법 auto*/
+      /* (9-1) 해결 */
+      width: calc(100% - 120px);
+    }
+
+    .visual-section .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+      background-color: #000;
+    } 
+
+    /* 9. 해결 */
+    .visual-section .swiper-button{
+      position: absolute;
+      right: 0px;
+      bottom: var(--swiper-control-position-bottom);
+      /* y축 크기의 80%만큼 아래로 (transform은 기존 수학적 지식과 다르게 -,+ 방향 거꾸로) */
+      transform: translate(0, 50%);
+    }
+    .visual-section .swiper-button>div{
+      /* position:absolute 무력화 : 기존에 설정된 top, bottom, right, left position 값을 무력화시킨다는 뜻 */
+      position: static;
+      /* 수평으로 오면서 너비 높이를 지정하고 싶다. */
+      display: inline-block;
+      width: 24px; height: 24px;
+      /* .swiper-button 사이의 | 를 넣기 위함 */
+      position: relative;
+      /* 이상해진 위치 기본값 복원 */
+      left: auto; right: auto; bottom: auto;
+    }
+    .visual-section .swiper-button .swiper-button-prev,
+    .visual-section .swiper-button .swiper-button-next{
+      /* width: 24px; height: 24px; */
+      padding-left: 10px;
+      padding-right: 10px;
+      background-image: none;
+    }
+
+    .visual-section .swiper-button .swiper-button-prev::after{
+      content: "";
+      display: block;
+      width: 2px;
+      height: 60%;
+      background:#ccc;
+      position:absolute;
+      right: 0;
+      /* '|' 아이콘을 기준 선에서 1차적으로 top: 50% 위치, 요소가 기준선에서 아래 위치해있으니까 transform으로 한번더 위로 올려줌! */
+      top: 50%;
+      transform: translate(0,-50%);
+    }
+    .visual-section .swiper-button .swiper-button-prev > img,
+    .visual-section .swiper-button .swiper-button-next > img{
+      width: 100%;
+      display: block;
+    }
+
+    /* .visual-section .swiper-button .swiper-button-next > img를 180도 회전시킴 (기존의 prev 원본이 아이콘 위치가 살짝 왼쪽으로 치우쳐져 있어서 정가운데 잘 배치되어 있는 next 버튼을 활용해 회전시켜 균형을 잡음 */
+    .visual-section .swiper-button .swiper-button-next > img{
+      transform: rotate(180deg);
+    }
+
+    .visual-section .swiper-button .swiper-button-play-toggle{}
+    .visual-section .swiper-button .swiper-button-play-toggle>span{
+      display: block;
+      padding-left: 100%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      overflow: hidden;
+    }
+    .visual-section .swiper-button .swiper-button-play-toggle .icon-pause{
+      background-image: url(/myfolder/images/pause_48dp.png);
+      background-repeat: no-repeat;
+    }
+    .visual-section .swiper-button .swiper-button-play-toggle .icon-play{
+      background-image: url(/myfolder/images/play_arrow_48dp.png);
+      background-repeat: no-repeat;
+    }
+    
+    /* 
+    .swiper-button-play-toggle.is-play : pause표시
+    .swiper-button-play-toggle.is-pause : play 표시
+    */
+    .visual-section .swiper-button .swiper-button-play-toggle.is-pause .icon-pause,
+    .visual-section .swiper-button .swiper-button-play-toggle.is-play .icon-play{
+      display: none;
+    }
+
+    /* 슬라이드 위치를 확인하기 위한 임시 span 태그 (삭제예정) */
+    .visual-section .swiper-slide{
+      position: relative; /* swiper 이미 설정 */
+    }
+    .visual-section .swiper-slide span{
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: #fff;
+    }
+    /* 위 슬라이드의 위치를 확인 테스트 후 삭제 */
