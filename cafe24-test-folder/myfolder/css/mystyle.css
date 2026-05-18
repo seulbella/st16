@@ -18,6 +18,16 @@
 /* 단배너 css */
 /* 단배너 공통 */
 .dan-section{}
+.dan-section .flex > .item{
+  flex: auto; /* red */
+}
+/* flex item 사이에 여백주는 방법 3가지
+
+  1. justify-content : space-between
+  2. flex에 gap
+  3. item에 margin
+
+*/
 .dan-section .item{
   /* flex:none; */
 }
