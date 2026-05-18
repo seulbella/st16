@@ -49,5 +49,34 @@
 }
 
 .dan-section .item .thumb{}
+.dan-section .item .thumb .xans-smart-banner-admin{
+  margin-bottom: 0;
+}
 .dan-section .item .thumb img{}
 .dan-section .item .desc{}
+
+/* 1024px 이하에서
+1. dan-section 3단 일렬로 표시
+   문제1. 브라우저 크기가 줄어들면 이미지가 같이 줄어듦
+   -  
+2. 태블릿에서는 1.8개 (col-lg) / 모바일에서는 1.2개 (col-md) : 각각 html문서 내 item에 클래스로 추가
+3. 부드러운 스크롤링 추가 (slide-behavior)
+   문제1. 스크롤바 표시 (overflow-x:auto)
+   문제2. css로 부드러운 스크롤링 추가
+   - .flex : scroll-behavior, scroll-snap-type, overflow-x(스크롤바 전제조건)
+   - .item : scroll-snap-align
+*/
+@media (max-width:1024px){
+  /* .dan-section */
+  .dan-section .flex{
+    width: 100%;
+    scroll-behavior: smooth;
+    overflow-x: auto;
+    /* 스크롤될 때 요소가 snap 타입 */
+    scroll-snap-type: x mandatory;
+  }
+  .dan-section .flex .item{
+    flex-shrink: 0;
+    scroll-snap-align: center;
+  }
+}
