@@ -30,8 +30,8 @@
   box-sizing: border-box;
 }
 
-[class*="col-"] {
-    padding-left: var(--dan-space);
+[class*="col-"] { /* 속성 선택자 */
+  padding-left: var(--dan-space);
   padding-right: var(--dan-space);
     /* padding-left: 0;
   padding-right: 0; */
