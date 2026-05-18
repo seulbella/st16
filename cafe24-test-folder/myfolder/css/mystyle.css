@@ -1,16 +1,16 @@
 /* 테스트 삭제 */
 @import url(ub-variables.css);
 .card{
-  background-color: #cff;
+  /* background-color: #cff;
   box-sizing: border-box;
   border: var(--border);
   min-height: 300px;
-  opacity: 0.5;
+  opacity: 0.5; */
 }
 .dan-section .flex{
-  background-color: #f00;
+  /* background-color: #f00;
   box-sizing: border-box;
-  border: 1px solid #000;
+  border: 1px solid #000; */
 }
 
 /* 공통 */
@@ -18,9 +18,65 @@
 /* 단배너 css */
 /* 단배너 공통 */
 .dan-section{}
+.dan-section .flex > .item{
+  flex: auto; /* red */
+}
+/* flex item 사이에 여백주는 방법 3가지
+
+  1. justify-content : space-between
+  2. flex에 gap
+  3. item에 margin
+
+*/
+
 .dan-section .item{
   /* flex:none; */
 }
+
+/* 
+단, 썸네일의 높이가 달라지는 문제 때문에 padding 값 수정 문제 발생
+*/
+/* .dan-section .item:first-child{
+  padding-left: 0px;
+}
+.dan-section .item:last-child{
+  padding-right: 0px;
+} */
+/* html의 flex 컨테이너에게 .gap- 으로 지정하세요. */
+.dan-section .flex .item[class*="col-"]{
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .dan-section .item .thumb{}
+.dan-section .item .thumb .xans-smart-banner-admin{
+  margin-bottom: 0;
+}
 .dan-section .item .thumb img{}
 .dan-section .item .desc{}
+
+/* 1024px 이하에서
+1. dan-section 3단 일렬로 표시
+   문제1. 브라우저 크기가 줄어들면 이미지가 같이 줄어듦
+   -  
+2. 태블릿에서는 1.8개 (col-lg) / 모바일에서는 1.2개 (col-md) : 각각 html문서 내 item에 클래스로 추가
+3. 부드러운 스크롤링 추가 (slide-behavior)
+   문제1. 스크롤바 표시 (overflow-x:auto)
+   문제2. css로 부드러운 스크롤링 추가
+   - .flex : scroll-behavior, scroll-snap-type, overflow-x(스크롤바 전제조건)
+   - .item : scroll-snap-align
+*/
+@media (max-width:1024px){
+  /* .dan-section */
+  .dan-section .flex{
+    width: 100%;
+    scroll-behavior: smooth;
+    overflow-x: auto;
+    /* 스크롤될 때 요소가 snap 타입 */
+    scroll-snap-type: x mandatory;
+  }
+  .dan-section .flex .item{
+    flex-shrink: 0;
+    scroll-snap-align: center;
+  }
+}

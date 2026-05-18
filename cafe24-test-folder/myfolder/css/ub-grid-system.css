@@ -18,7 +18,9 @@
 /* 섹션 너비 제한용 */
 .section {
   width: var(--section-width);
-  margin: 0 auto;
+  /* margin: 0 auto; */ 
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* 12컬럼 그리드 */
@@ -30,8 +32,8 @@
   box-sizing: border-box;
 }
 
-[class*="col-"] {
-    padding-left: var(--dan-space);
+[class*="col-"] { /* 속성 선택자 */
+  padding-left: var(--dan-space);
   padding-right: var(--dan-space);
     /* padding-left: 0;
   padding-right: 0; */
@@ -118,7 +120,7 @@
 .flex-1 { flex: 1; }
 .flex-2 { flex: 2; }
 .flex-3 { flex: 3; }
-.flex-auto { flex: auto; }
+.flex-auto { flex: auto; } /* red */
 .flex-none { flex: none; }
 
 /* 개별 세로 정렬 */
@@ -154,7 +156,7 @@
 .gap-3 { gap: 0.75rem; }   /* 12px */
 .gap-4 { gap: 1rem; }      /* 16px */
 .gap-5 { gap: 1.25rem; }   /* 20px */
-.gap-6 { gap: 1.5rem; }    /* 24px */
+.gap-6 { gap: 1.5rem; }    /* 24px red */ 
 .gap-8 { gap: 2rem; }      /* 32px */
 .gap-10 { gap: 2.5rem; }   /* 40px */
 
@@ -276,8 +278,8 @@
   .gap-lg-xl { gap: var(--space-xl); }
 }
 
-/* 태블릿 (767px~) */
-@media (max-width: 767px) {
+/* 태블릿 (768px~) */
+@media (max-width: 768px) {
   .col-md-1 { width: 8.33%; }
   .col-md-2 { width: 16.66%; }
   .col-md-3 { width: 25%; }
