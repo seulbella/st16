@@ -1,5 +1,5 @@
 /* 테스트 삭제 */
-@import url(ub-variables.css);
+
 .ub-style{
   background-color: #ccc;
   border: 1px solid #000;
@@ -11,6 +11,10 @@
   margin-top: 50px;
 }
 /* 공통 */
+/* 타이포그라피 */
+input, select, textarea, body, code, button {
+    font-family: "Poppins", "Pretendard Variable", Pretendard, Arial, sans-serif !important;
+}
 
 /* 단배너 css */
 /* 단배너 공통 */
