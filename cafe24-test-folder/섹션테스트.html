@@ -32,6 +32,8 @@
     <link rel="stylesheet" href="/layout/basic/css/ec-base-product.css" />
     <link rel="stylesheet" href="/layout/basic/css/ec-base-prdInfo.css" />
     <link rel="stylesheet" href="/layout/basic/css/ec-base-paginate.css" />
+		<!-- 섹션타이틀 + 탭메뉴 위치 -->
+		<link rel="stylesheet" href="/layout/basic/css/main.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -88,7 +90,7 @@
 
           <!-- 섹션 타이틀(제목) 테스트 -->
           <section class="section ub-style">
-						<!-- .main_title에 .flex를 추가하면 한줄로 .flex 빼면 수직으로-->
+            <!-- .main_title에 .flex를 추가하면 한줄로 .flex 빼면 수직으로-->
             <div
               class="main_title ez-align-left flex"
               data-ez-role="ez-align"
@@ -101,6 +103,62 @@
               <div class="main_title_txt02" data-ez-role="subtitle">
                 서브타이블 영역
               </div>
+            </div>
+          </section>
+
+          <!-- 섹션 타이틀(제목) + 탭메뉴 -->
+          <section class="section ub-style main_product_category">
+            <div
+              class="main_product_inner ez-align-left"
+              data-ez-role="ez-align"
+              data-ez-align="left"
+            >
+              <div class="main_title">
+                <!-- 세일상품 타이틀 수정하는곳 -->
+                <div class="main_title_txt01" data-ez-role="title">
+                  MD's 추천
+                </div>
+                <div class="main_title_txt02" data-ez-role="subtitle">
+                  이번 시즌에 주목받는 상품을 만나보세요.
+                </div>
+              </div>
+              <!-- //main_title -->
+
+              <ul class="main_product_tab" data-ez-role="tab-list">
+                <li data-ez-role="tab-item">
+                  <button
+                    type="button"
+                    class="button active"
+                    data-id="tabContent1"
+                    data-ez-role="name"
+                    data-name="26 SS 신상"
+                  >
+                    26 SS 신상
+                  </button>
+                </li>
+                <li data-ez-role="tab-item">
+                  <button
+                    type="button"
+                    class="button"
+                    data-id="tabContent2"
+                    data-ez-role="name"
+                    data-name="가디건"
+                  >
+                    가디건
+                  </button>
+                </li>
+                <li data-ez-role="tab-item">
+                  <button
+                    type="button"
+                    class="button"
+                    data-id="tabContent3"
+                    data-ez-role="name"
+                    data-name="하객룩"
+                  >
+                    하객룩
+                  </button>
+                </li>
+              </ul>
             </div>
           </section>
           <!-- //.section -->
@@ -126,5 +184,8 @@
     <link rel="stylesheet" href="/myfolder/css/ub-variables.css" />
     <link rel="stylesheet" href="/myfolder/css/ub-grid-system.css" />
     <link rel="stylesheet" href="/myfolder/css/mystyle.css" />
+    <!--@css(/myfolder/css/ub-variables.css)-->
+    <!--@css(/myfolder/css/ub-grid-system.css)-->
+    <!--@css(/myfolder/css/mystyle.css)-->
   </body>
 </html>

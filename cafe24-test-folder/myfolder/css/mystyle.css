@@ -53,7 +53,10 @@
 .dan-section .item .desc{}
 
 /* .section.ub-style 스타일 */
-.ub-style{}
+.ub-style.section_full{
+  /* 본인 브랜드 색상을 사용하세요 var(--section-bg) 권해드려요. */
+  background-color: var(--section-bg);
+}
 .ub-style .ub-style-inner{}
 
 /* .section이 브라우저를 다 차지할 때 정렬을 위한 .ub-style-inner */
@@ -65,6 +68,7 @@
     margin-right:auto;
   }
 }
+
 /* .ub-style .main_title */
 .ub-style .main_title{}
 .ub-style .main_title.flex{
@@ -73,20 +77,20 @@
 }
 
 .ub-style .main_title .main_title_txt02{
-  margin-left: 10px;
+  margin-right: 10px;
   margin-top: 0;
 }
 .ub-style .main_title .main_title_txt01{
-  font-size: 32px;
+  /* font-size: 32px;
   font-weight: 700;
   line-height: 1;
-  color: #000;
+  color: #000; */
 }
 .ub-style .main_title .main_title_txt02{
-  font-size: 20px;
+  /* font-size: 20px;
   font-weight: 400;
   line-height: 1;
-  color: #999;
+  color: #999; */
 }
 
 /* 미디어쿼리 */
