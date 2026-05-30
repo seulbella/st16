@@ -194,7 +194,7 @@ a:hover {text-decoration:none;}
 .more .btnMore:hover {color:#1a1a1a;background-color:#fff;border:1px solid #1a1a1a;}
 .more .btnMore:hover > div {color:#1a1a1a;}
 
-@media all and (max-width:1680px) {
+ all and (max-width:1680px) {
 	/* 최상단 배너 */
 	.main_top_banner .top_banner_box_inner .top_banner_text a {font-size:calc(13px + (15 - 13) * ((100vw - 370px) / (1680 - 370)));}
 }

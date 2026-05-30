@@ -1,18 +1,15 @@
 /* 테스트 삭제 */
 @import url(ub-variables.css);
-.card{
-  /* background-color: #cff;
+.ub-style{
+  background-color: #ccc;
+  border: 1px solid #000;
   box-sizing: border-box;
-  border: var(--border);
-  min-height: 300px;
-  opacity: 0.5; */
-}
-.dan-section .flex{
-  /* background-color: #f00;
-  box-sizing: border-box;
-  border: 1px solid #000; */
 }
 
+/* .ub-style 연속으로 나올 때 동생에게 해당 스타일을 주세요. */
+.ub-style + .ub-style{
+  margin-top: 50px;
+}
 /* 공통 */
 
 /* 단배너 css */
@@ -54,6 +51,50 @@
 }
 .dan-section .item .thumb img{}
 .dan-section .item .desc{}
+
+/* .section.ub-style 스타일 */
+.ub-style.section_full{
+  /* 본인 브랜드 색상을 사용하세요 var(--section-bg) 권해드려요. */
+  background-color: var(--section-bg);
+}
+.ub-style .ub-style-inner{}
+
+/* .section이 브라우저를 다 차지할 때 정렬을 위한 .ub-style-inner */
+@media (min-width:1024px){
+	#contents > .section_full.ub-style .ub-style-inner {
+    max-width:1420px;
+    width:92%;
+    margin-left:auto;
+    margin-right:auto;
+  }
+}
+
+/* .ub-style .main_title */
+.ub-style .main_title{}
+.ub-style .main_title.flex{
+  align-items: end;
+  justify-content: start;
+}
+
+.ub-style .main_title .main_title_txt02{
+  margin-right: 10px;
+  margin-top: 0;
+}
+.ub-style .main_title .main_title_txt01{
+  /* font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000; */
+}
+.ub-style .main_title .main_title_txt02{
+  /* font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+  color: #999; */
+}
+
+/* 미디어쿼리 */
+
 
 /* 1024px 이하에서
 1. dan-section 3단 일렬로 표시
