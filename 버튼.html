@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0;}
+    body{margin:50px;}
+    [class*="btn-"]{
+      border:1px solid #000;
+      text-align: center;
+      display: inline-block;
+      padding:0.5rem 1rem;
+    }
+    .btn-buy{
+      background-color: teal;
+      color:#fff;
+    }
+    [class*="btn-"]{
+      margin-right: 1rem;
+    }
+    [class*="btn-"]:last-of-type{
+       margin-right: 0;
+    }
+     /* [class*="btn-"]+[class*="btn-"]{
+      margin-left: 1rem;
+     } */
+
+  </style>
+</head>
+<body>
+  <div class="btn-buy">BUY</div>
+  <div class="btn-cart">장바구니</div>
+  <div class="btn-wish">조르기</div>
+</body>
+</html>

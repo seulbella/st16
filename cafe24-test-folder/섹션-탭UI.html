@@ -15,7 +15,7 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <!-- // PG크로스브라우징필수내용 -->
 
-    <title>섹션 테스트</title>
+    <title>섹션-탭UI</title>
     <link rel="stylesheet" href="" />
     <link rel="stylesheet" href="/layout/basic/css/common.css" />
     <!-- 해당 CSS는 쇼핑몰 전체 페이지에 영향을 줍니다. 삭제와 수정에 주의해주세요. -->
@@ -88,7 +88,7 @@
           </section>
           <!-- //.section -->
 
-          <!-- 섹션 타이틀 테스트 (row 방향) -->
+          <!-- 섹션 타이틀 (row 방향) -->
           <section class="section ub-style">
             <!-- .main_title에 .flex를 추가하면 한줄로 .flex 빼면 수직으로-->
             <div
@@ -106,7 +106,7 @@
             </div>
           </section>
 
-          <!-- 섹션 타이틀 column 방향 -->
+          <!-- 섹션 타이틀 (column 방향) -->
           <section class="section ub-style">
             <!-- .main_title에 .flex를 추가하면 한줄로 .flex 빼면 수직으로-->
             <div
@@ -125,9 +125,10 @@
           </section>
 
           <!-- 섹션 타이틀(제목) + 탭메뉴 -->
-          <section class="section ub-style main_product_category">
+          <!-- 탭 방향 row -->
+          <section class="section ub-style main_product_category tab-direction-row">
             <div
-              class="main_product_inner ez-align-left"
+              class="main_product_inner ez-align-left "
               data-ez-role="ez-align"
               data-ez-align="left"
             >
@@ -177,6 +178,75 @@
                   </button>
                 </li>
               </ul>
+            </div>
+            <div class="content_list">
+              <div class="tabcontent active">탭 컨텐츠1</div>
+              <div class="tabcontent">탭 컨텐츠2</div>
+              <div class="tabcontent">탭 컨텐츠3</div>
+              <div class="tabcontent">탭 컨텐츠4</div>
+            </div>
+          </section>
+
+          <!-- 섹션 제목 + 탭메뉴 -->
+          <!-- 탭 방향 column -->
+          <section class="section ub-style main_product_category tab-direction-column">
+            <div
+              class="main_product_inner ez-align-left "
+              data-ez-role="ez-align"
+              data-ez-align="left"
+            >
+              <div class="main_title">
+                <!-- 세일상품 타이틀 수정하는곳 -->
+                <div class="main_title_txt01" data-ez-role="title">
+                  MD's 추천
+                </div>
+                <div class="main_title_txt02" data-ez-role="subtitle">
+                  이번 시즌에 주목받는 상품을 만나보세요.
+                </div>
+              </div>
+              <!-- //main_title -->
+
+              <ul class="main_product_tab" data-ez-role="tab-list">
+                <li data-ez-role="tab-item">
+                  <button
+                    type="button"
+                    class="button active"
+                    data-id="tabContent1"
+                    data-ez-role="name"
+                    data-name="26 SS 신상"
+                  >
+                    26 SS 신상
+                  </button>
+                </li>
+                <li data-ez-role="tab-item">
+                  <button
+                    type="button"
+                    class="button"
+                    data-id="tabContent2"
+                    data-ez-role="name"
+                    data-name="가디건"
+                  >
+                    가디건
+                  </button>
+                </li>
+                <li data-ez-role="tab-item">
+                  <button
+                    type="button"
+                    class="button"
+                    data-id="tabContent3"
+                    data-ez-role="name"
+                    data-name="하객룩"
+                  >
+                    하객룩
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div class="content_list">
+              <div class="tabcontent active">탭 컨텐츠1</div>
+              <div class="tabcontent">탭 컨텐츠2</div>
+              <div class="tabcontent">탭 컨텐츠3</div>
+              <div class="tabcontent">탭 컨텐츠4</div>
             </div>
           </section>
           <!-- //.section -->
