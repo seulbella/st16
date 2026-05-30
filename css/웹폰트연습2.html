@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>웹폰트연습</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+/* .noto-sans-kr-<uniquifier> {
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+/* 프리텐다드 웹폰트 설치 css 앞에 설치 + font-family 함께 가져가기 */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+
+/* font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+font-optical-sizing: auto; */
+
+/* font-family: "Pretendard Variable", Pretendard, sans-serif;
+font-optical-sizing: auto; */
+
+.fw100{font-weight: 100;}
+.fw200{font-weight: 200;}
+.fw300{font-weight: 300;}
+.fw400{font-weight: 400;}
+.fw500{font-weight: 500;}
+.fw600{font-weight: 600;}
+.fw700{font-weight: 700;}
+
+[class*="sample"]{
+  font-size: 32px;
+}
+
+/* noto sans */
+.sample1{
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+}
+
+/* 프리텐다드 */
+.sample2{
+  font-family: "Pretendard Variable", Pretendard, sans-serif;
+  font-optical-sizing: auto;
+}
+  </style>
+</head>
+<body>
+  <div class="sample1 fw100">동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</div>
+  <div class="sample1 fw200">동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</div>
+  <div class="sample1 fw300">동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</div>
+  <div class="sample1 fw400">동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</div>
+  <div class="sample1 fw500">동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</div>
+  <div class="sample1 fw600">동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</div>
+  <div class="sample1 fw700">동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</div>
+
+  <div class="sample2 fw100">동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</div>
+  <div class="sample2 fw200">동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</div>
+  <div class="sample2 fw300">동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</div>
+  <div class="sample2 fw400">동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</div>
+  <div class="sample2 fw500">동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</div>
+  <div class="sample2 fw600">동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</div>
+  <div class="sample2 fw700">동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</div>
+</body>
+</html>
